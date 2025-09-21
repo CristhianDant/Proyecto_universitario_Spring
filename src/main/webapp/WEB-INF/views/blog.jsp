@@ -15,7 +15,7 @@
   </div>
     <nav>
       <ul class="navbar-nav">
-        <li><a href="/index">Inicio</a></li>
+        <li><a href="/">Inicio</a></li>
         <li><a href="/empresa">Nuestra Empresa</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/novedades">Novedades</a></li>
