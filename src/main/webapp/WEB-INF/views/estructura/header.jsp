@@ -1,21 +1,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-
-<header>
+    <header>
       <div class="container-fluid">
         <div class="row py-3 border-bottom">
+
           <div class="col-sm-4 col-lg-3 text-center text-sm-start">
             <div class="main-logo">
               <a href="/">
-                <img src="/img/logo.png" alt="logo" class="img-fluid">
+                <img src="${pageContext.request.contextPath}/img/logoBio.jpg" alt="logo" class="img-fluid">
               </a>
             </div>
           </div>
+
           <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
             <div class="search-bar row bg-light p-2 my-2 rounded-4">
+
               <div class="col-12 col-md-10">
-                <form id="search-form" class="text-center" action="index.html" method="post">
+                <form id="search-form" class="text-center" action="/" method="post">
                   <input type="text" class="form-control border-0 bg-transparent " placeholder="Hola, ¿Que estas buscando?" />
                 </form>
               </div>
@@ -24,14 +25,16 @@
               </div>
             </div>
           </div>
+
           <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
             <div class="support-box text-end d-none d-xl-block">
               <span class="fs-6 text-muted">Conctáctanos</span>
               <h5 class="mb-0">+51-944482697</h5>
             </div>
+
             <ul class="d-flex justify-content-end list-unstyled m-0">
               <li>
-                <a href="login.html" class="rounded-circle bg-light p-2 mx-1">
+                <a href="#" class="rounded-circle bg-light p-2 mx-1">
                   <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#user"></use></svg>
                 </a>
               </li>
@@ -40,56 +43,97 @@
                   <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg>
                 </a>
               </li>
+              <li class="d-lg-none">
+                <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#cart"></use></svg>
+                </a>
+              </li>
+              <li class="d-lg-none">
+                <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
+                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#search"></use></svg>
+                </a>
+              </li>
             </ul>
+
+            <div class="cart text-end d-none d-lg-block dropdown">
+              <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                <span class="fs-6 text-muted dropdown-toggle">Tu carrito</span>
+                <span class="cart-total fs-5 fw-bold">$0.00</span>
+              </button>
+            </div>
           </div>
+
         </div>
       </div>
       <div class="container-fluid">
         <div class="row py-3">
           <div class="d-flex  justify-content-center justify-content-sm-between align-items-center">
             <nav class="main-menu d-flex navbar navbar-expand-lg">
+
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
+
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
                 <div class="offcanvas-header justify-content-center">
                   <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+
                 <div class="offcanvas-body">
+
+
+
                   <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
-                    <li class="nav-item">
-                      <a href="empresa.html" class="nav-link">Nuestra Empresa</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="LineaProductos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Línea de Productos
-                      </a>
-                      <ul class="dropdown-menu" aria-labelledby="LineaProductos">
-                        <li><a href="equipos.html" class="dropdown-item">Equipos de Laboratorio</a></li>
-                        <li><a href="colorantes.html" class="dropdown-item">Colorantes de Laboratorio</a></li>
-                        <li><a href="kits.html" class="dropdown-item">Kits de Laboratorio</a></li>
-                        <li><a href="medios.html" class="dropdown-item">Medios de Cultivo</a></li>
-                        <li><a href="reactivos.html" class="dropdown-item">Reactivos de Laboratorio</a></li>
-                        <li><a href="suplementos.html" class="dropdown-item">Suplementos de Laboratorio</a></li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a href="novedades.html" class="nav-link">Novedades</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="sale.html" class="nav-link">Sale</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="blog.html" class="nav-link">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="contacto.html" class="nav-link">Contáctanos</a>
-                    </li>
+<ul class="navbar-nav">
+  <li class="nav-item">
+    <a href="/empresa" class="nav-link">Nuestra Empresa</a>
+  </li>
+
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="LineaProductos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Línea de Productos
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="LineaProductos">
+      <li><a href="equipos.html" class="dropdown-item">Equipos de Laboratorio</a></li>
+      <li><a href="colorantes.html" class="dropdown-item">Colorantes de Laboratorio</a></li>
+      <li><a href="kits.html" class="dropdown-item">Kits de Laboratorio</a></li>
+      <li><a href="medios.html" class="dropdown-item">Medios de Cultivo</a></li>
+      <li><a href="reactivos.html" class="dropdown-item">Reactivos de Laboratorio</a></li>
+      <li><a href="suplementos.html" class="dropdown-item">Suplementos de Laboratorio</a></li>
+    </ul>
+  </li>
+
+  <li class="nav-item">
+    <a href="/novedades" class="nav-link">Novedades</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="/sale" class="nav-link">Sale</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="/blog" class="nav-link">Blog</a>
+  </li>
+
+  <li class="nav-item">
+    <a href="/contacto" class="nav-link">Contáctanos</a>
+  </li>
+
+
+  <li class="nav-item">
+      <a href="/otracosa" class="nav-link">OtraCosa</a>
+    </li>
+
+
+</ul>
+
                   </ul>
+
                 </div>
+
               </div>
-            </nav>
           </div>
         </div>
       </div>

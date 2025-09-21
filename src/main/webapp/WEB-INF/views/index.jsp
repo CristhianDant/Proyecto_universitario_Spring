@@ -138,139 +138,12 @@
       </div>
     </div>
 
-    <header>
-      <div class="container-fluid">
-        <div class="row py-3 border-bottom">
-          
-          <div class="col-sm-4 col-lg-3 text-center text-sm-start">
-            <div class="main-logo">
-              <a href="/">
-                <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo" class="img-fluid">
-              </a>
-            </div>
-          </div>
-          
-          <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
-            <div class="search-bar row bg-light p-2 my-2 rounded-4">
 
-              <div class="col-12 col-md-10">
-                <form id="search-form" class="text-center" action="/" method="post">
-                  <input type="text" class="form-control border-0 bg-transparent " placeholder="Hola, ¿Que estas buscando?" />
-                </form>
-              </div>
-              <div class="col-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 20.29L18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a1 1 0 0 0 1.42 0a1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 7-7a7 7 0 0 1-7 7Z"/></svg>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
-            <div class="support-box text-end d-none d-xl-block">
-              <span class="fs-6 text-muted">Conctáctanos</span>
-              <h5 class="mb-0">+51-944482697</h5>
-            </div>
+    <jsp:include page="estructura/header.jsp" />
 
-            <ul class="d-flex justify-content-end list-unstyled m-0">
-              <li>
-                <a href="#" class="rounded-circle bg-light p-2 mx-1">
-                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#user"></use></svg>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="rounded-circle bg-light p-2 mx-1">
-                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#heart"></use></svg>
-                </a>
-              </li>
-              <li class="d-lg-none">
-                <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#cart"></use></svg>
-                </a>
-              </li>
-              <li class="d-lg-none">
-                <a href="#" class="rounded-circle bg-light p-2 mx-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch">
-                  <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#search"></use></svg>
-                </a>
-              </li>
-            </ul>
 
-            <div class="cart text-end d-none d-lg-block dropdown">
-              <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
-                <span class="fs-6 text-muted dropdown-toggle">Tu carrito</span>
-                <span class="cart-total fs-5 fw-bold">$0.00</span>
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row py-3">
-          <div class="d-flex  justify-content-center justify-content-sm-between align-items-center">
-            <nav class="main-menu d-flex navbar navbar-expand-lg">
-
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-
-                <div class="offcanvas-header justify-content-center">
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-
-                <div class="offcanvas-body">
-              
-
-              
-                  <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
-<ul class="navbar-nav">
-  <li class="nav-item">
-    <a href="/empresa" class="nav-link">Nuestra Empresa</a>
-  </li>
-
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="LineaProductos" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      Línea de Productos
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="LineaProductos">
-      <li><a href="equipos.html" class="dropdown-item">Equipos de Laboratorio</a></li>
-      <li><a href="colorantes.html" class="dropdown-item">Colorantes de Laboratorio</a></li>
-      <li><a href="kits.html" class="dropdown-item">Kits de Laboratorio</a></li>
-      <li><a href="medios.html" class="dropdown-item">Medios de Cultivo</a></li>
-      <li><a href="reactivos.html" class="dropdown-item">Reactivos de Laboratorio</a></li>
-      <li><a href="suplementos.html" class="dropdown-item">Suplementos de Laboratorio</a></li>
-    </ul>
-  </li>
-
-  <li class="nav-item">
-    <a href="/novedades" class="nav-link">Novedades</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="/sale" class="nav-link">Sale</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="/blog" class="nav-link">Blog</a>
-  </li>
-
-  <li class="nav-item">
-    <a href="/contacto" class="nav-link">Contáctanos</a>
-  </li>
-</ul>
-
-                  </ul>
-                
-                </div>
-
-              </div>
-          </div>
-        </div>
-      </div>
-    </header>
     
-    <section class="py-3" style="background-image: url('images/background-pattern.jpg');background-repeat: no-repeat;background-size: cover;">
+    <section class="py-3" style="background-image: url('img/background-pattern.jpg');background-repeat: no-repeat;background-size: cover;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -291,7 +164,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Comprar Ahora</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/images/gm1363-500g.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/gm1363-500g.png" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -305,7 +178,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Ver Modelos</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/images/dlab-dpette-micropipeta-electronica.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/dlab-dpette-micropipeta-electronica.png" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -319,7 +192,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Ver Modelos</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/images/gradilla-50ml.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/gradilla-50ml.png" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -330,7 +203,7 @@
                 </div>
               </div>
               
-              <div class="banner-ad bg-success-subtle block-2" style="background:url('images/medios-10%dscto.png') no-repeat;background-position: right bottom">
+              <div class="banner-ad bg-success-subtle block-2" style="background:url('img/medios-10%dscto.png') no-repeat;background-position: right bottom">
                 <div class="row banner-content p-5">
 
                   <div class="content-wrapper col-md-7">
@@ -342,7 +215,7 @@
                 </div>
               </div>
 
-              <div class="banner-ad bg-danger block-3" style="background:url('images/microscopio-5%dscto.png') no-repeat;background-position: right bottom">
+              <div class="banner-ad bg-danger block-3" style="background:url('img/microscopio-5%dscto.png') no-repeat;background-position: right bottom">
                 <div class="row banner-content p-5">
 
                   <div class="content-wrapper col-md-7">
@@ -474,7 +347,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/radwag-logo.png" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/radwag-logo.png" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -489,7 +362,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/Merck-logo.png" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/Merck-logo.png" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -504,7 +377,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/Himedia-logo.jpg" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/Himedia-logo.jpg" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -519,7 +392,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/isolab-logo.png" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/isolab-logo.png" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -534,7 +407,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/tarsons-logo.jpg" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/tarsons-logo.jpg" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -549,7 +422,7 @@
                   <div class="card mb-3 p-3 rounded-4 shadow border-0">
                     <div class="row g-0">
                       <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/images/biobase-logo.jpg" class="img-fluid rounded" alt="Card title">
+                        <img src="${pageContext.request.contextPath}/img/biobase-logo.jpg" class="img-fluid rounded" alt="Card title">
                       </div>
                       <div class="col-md-8">
                         <div class="card-body py-0">
@@ -598,7 +471,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/asa de siembra.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/asa de siembra.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Asa de Siembra</h3>
@@ -631,7 +504,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/rack.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/rack.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Rack para crioviales</h3>
@@ -663,7 +536,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/CRIOVIALES-AUTO-SOSTENIBLES-GRADUADOS-DE-2-mL.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/CRIOVIALES-AUTO-SOSTENIBLES-GRADUADOS-DE-2-mL.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Crioviales</h3>
@@ -695,7 +568,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/estufa.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/estufa.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Estufa de Laboratorio</h3>
@@ -727,7 +600,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/tubo.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tubo.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tubo de ensayo</h3>
@@ -759,7 +632,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/macconkey-agar.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/macconkey-agar.png"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Agar Mac conkey</h3>
@@ -791,7 +664,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/tamiz-de-laboratorio.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tamiz-de-laboratorio.png"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tamiz de 5 pulgadas</h3>
@@ -823,7 +696,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/escurridor-de-laboratorio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/escurridor-de-laboratorio.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Escurridor de Laboratorio</h3>
@@ -855,7 +728,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/carboy-de-laboratorio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/carboy-de-laboratorio.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Carboy de 20 LT</h3>
@@ -887,7 +760,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/matraz-de-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/matraz-de-vidrio.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Matraz de vidrio de 500 ml</h3>
@@ -929,7 +802,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/embudo-de-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/embudo-de-vidrio.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Embudo de vidrio de 100mm</h3>
@@ -962,7 +835,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/rack-microtubos.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/rack-microtubos.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Rack para microtubos de 1.5ml</h3>
@@ -995,7 +868,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/tubos-criogenicos.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tubos-criogenicos.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tubos de Microcentrifuga 1.5ml</h3>
@@ -1027,7 +900,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/pera-decantacion.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/pera-decantacion.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Pera de decantación de 100ml</h3>
@@ -1059,7 +932,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/frasco-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/frasco-vidrio.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Frasco de vidrio de 100ml</h3>
@@ -1091,7 +964,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/images/frasco-ambar.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/frasco-ambar.jpg"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Frasco de vidrio ambar 100ml</h3>
@@ -1122,6 +995,7 @@
                   <!-- / product-grid -->
 
                 </div>
+
                 <div class="tab-pane fade" id="nav-juices" role="tabpanel" aria-labelledby="nav-juices-tab">
 
                   <div class="product-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
@@ -1336,7 +1210,7 @@
         <div class="row">
           
           <div class="col-md-6">
-            <div class="banner-ad bg-danger mb-3" style="background: url('images/materiales-de-laboratorio666.webp');background-repeat: no-repeat;background-position: right bottom;">
+            <div class="banner-ad bg-danger mb-3" style="background: url('img/materiales-de-laboratorio666.webp');background-repeat: no-repeat;background-position: right bottom;">
               <div class="banner-content p-5">
 
                 <div class="categories text-primary fs-3 fw-bold">hasta 25% de dscto</div>
@@ -1349,7 +1223,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="banner-ad bg-info" style="background: url('images/EQP.webp') no-repeat;background-position: right bottom;">
+            <div class="banner-ad bg-info" style="background: url('img/EQP.webp') no-repeat;background-position: right bottom;">
               <div class="banner-content p-5">
 
                 <div class="categories text-primary fs-3 fw-bold">Hasta 20% de descuento</div>
@@ -1397,7 +1271,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/microscopio.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/microscopio.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Microscopio Binocular</h3>
@@ -1428,7 +1302,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/balanza.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/balanza.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Balanza Analitica</h3>
@@ -1459,7 +1333,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/centrifuga.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/centrifuga.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Centrífuga de Laboratorio</h3>
@@ -1490,7 +1364,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/cabina.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/cabina.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Cabina de Flujo Laminar</h3>
@@ -1519,7 +1393,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/vasos.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/vasos.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Vasos precepitados</h3>
@@ -1549,7 +1423,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/calorimetro.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/calorimetro.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>calorimetro de combustión</h3>
@@ -1579,7 +1453,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/agitador.tamices.png"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/agitador.tamices.png"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Agitador de Tamices</h3>
@@ -1609,7 +1483,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/viscosimetro.1.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/viscosimetro.1.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Viscosimetro</h3>
@@ -1647,7 +1521,7 @@
     <section class="py-5">
       <div class="container-fluid">
 
-        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('images/bg-leaves-img-pattern.png') no-repeat;">
+        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('img/bg-leaves-img-pattern.png') no-repeat;">
           <div class="container my-5">
             <div class="row">
               <div class="col-md-6 p-5">
@@ -1718,7 +1592,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/tubo.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/tubo.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Tubo de ensayo</h3>
@@ -1748,7 +1622,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/matraz-de-vidrio.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/matraz-de-vidrio.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Matraz de vidrio 500 ml</h3>
@@ -1778,7 +1652,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/embudo-de-vidrio.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/embudo-de-vidrio.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Embudo de vidrio</h3>
@@ -1808,7 +1682,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/pipeta.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/pipeta.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>pipeta</h3>
@@ -1837,7 +1711,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/bureta.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/bureta.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>bureta</h3>
@@ -1867,7 +1741,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/balon.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/balon.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Balon de destilacion</h3>
@@ -1897,7 +1771,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/placa de petri.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/placa de petri.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Placa de petri</h3>
@@ -1927,7 +1801,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/rack-microtubos.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/rack-microtubos.jpg"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Rack para crioviales</h3>
@@ -1962,494 +1836,13 @@
       </div>
     </section>
 
-    <section class="py-5 overflow-hidden">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="section-header d-flex justify-content-between">
-              
-              <h2 class="section-title">Recien llegados</h2>
-
-              <div class="d-flex align-items-center">
-                <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
-                <div class="swiper-buttons">
-                  <button class="swiper-prev products-carousel-prev btn btn-primary">❮</button>
-                  <button class="swiper-next products-carousel-next btn btn-primary">❯</button>
-                </div>  
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="products-carousel swiper">
-              <div class="swiper-wrapper">
-                
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/biobase.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Incubador</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/1000.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/multiparametro.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Multiparametro</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/4200.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>                 </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/turbidez.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Medidor de Turbidez</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/2450.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/fotometro.jpeg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Fotometro de luz UV</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/5600.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/destilador.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Destilador de Agua</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/4800.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/autoclave.horizontal.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Autoclave Horizontal</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/7800.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/BIOBASE-CABINA-PCR-1300.jpeg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Cabina PCR </h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/17200.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/images/Armario.inflamable.jpeg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Aramario para Acidos</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">S/6400.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-            <!-- / products-carousel -->
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="latest-blog" class="py-5">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="section-header d-flex align-items-center justify-content-between my-5">
-            <h2 class="section-title">Nuestro Blog reciente</h2>
-            <div class="btn-wrap align-right">
-              <a href="#" class="d-flex align-items-center nav-link">Leer Todos los articulos <svg width="24" height="24"><use xlink:href="#arrow-right"></use></svg></a>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <article class="post-item card border-0 shadow-sm p-3">
-              <div class="image-holder zoom-effect">
-                <a href="#">
-                  <img src="${pageContext.request.contextPath}/images/gaza.1.png" alt="post" class="card-img-top">
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>07 de julio 2025</div>
-                  <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>Consejos y Trucos</div>
-                </div>
-                <div class="post-header">
-                  <h3 class="post-title">
-                    <a href="#" class="text-decoration-none">Habitantes de Gaza relatan a la BBC las torturas que sufrieron durante su detención en Israel</a>
-                  </h3>
-                  <p>Hemos entrevistado en profundidad a cinco detenidos excarcelados, todos ellos arrestados en Gaza en los meses posteriores a que Hamás y otros grupos mataran a unas 1.200 personas en Israel y tomaran a 251 como rehenes.</p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="post-item card border-0 shadow-sm p-3">
-              <div class="image-holder zoom-effect">
-                <a href="#">
-                  <img src="${pageContext.request.contextPath}/images/alumna.unmsm.png" alt="post" class="card-img-top">
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>08 de Julio del 2025</div>
-                  <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>Novedades</div>
-                </div>
-                <div class="post-header">
-                  <h3 class="post-title">
-                    <a href="#" class="text-decoration-none">Ingeniera de San Marcos será la primera astronauta análoga peruana en programa de élite mundial</a>
-                  </h3>
-                  <p>Por primera vez, una compatriota participará en un exclusivo programa en EE. UU., donde solo 21 jóvenes del mundo fueron elegidos para impulsar la ciencia y la tecnología espacial</p>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="col-md-4">
-            <article class="post-item card border-0 shadow-sm p-3">
-              <div class="image-holder zoom-effect">
-                <a href="#">
-                  <img src="${pageContext.request.contextPath}/images/medifarma.png" alt="post" class="card-img-top">
-                </a>
-              </div>
-              <div class="card-body">
-                <div class="post-meta d-flex text-uppercase gap-3 my-2 align-items-center">
-                  <div class="meta-date"><svg width="16" height="16"><use xlink:href="#calendar"></use></svg>28 Aug 2021</div>
-                  <div class="meta-categories"><svg width="16" height="16"><use xlink:href="#category"></use></svg>inspiration</div>
-                </div>
-                <div class="post-header">
-                  <h3 class="post-title">
-                    <a href="#" class="text-decoration-none">Se frustra diligencia a instalaciones de la planta del laboratorio de Medifarma</a>
-                  </h3>
-                  <p>La diligencia no logró llevar a cabo porque personal de la Digemid no llevó los equipos necesarios para la toma de muestra, aseguró a RPP el abogado de la familia de Alejandra Landers, la joven arquitecta que falleció tras habérsele suministrado el suero defectuoso de Medifarma.</p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-5 my-5">
-      <div class="container-fluid">
-
-        <div class="bg-warning py-5 rounded-5" style="background-image: url('images/bg-pattern-2.png') no-repeat;">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="${pageContext.request.contextPath}/images/celular.app.jpg" alt="phone" class="image-float img-fluid">
-              </div>
-              <div class="col-md-8">
-                <h2 class="my-5">Compra Rápido con Biogenics App</h2>
-                <p>Nuestra web en tu celular es uno de los mejores aplicativos a nivel quimico, puedes realizar comprar gracias al carrito de compras virtual.</p>
-                <div class="d-flex gap-2 flex-wrap">
-                  <img src="${pageContext.request.contextPath}/images/app-store.jpg" alt="app-store">
-                  <img src="${pageContext.request.contextPath}/images/google-play.jpg" alt="google-play">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-    <section class="py-5">
-      <div class="container-fluid">
-        <h2 class="my-5">Para mayor información contactarse con nuestro departamenteo de ventas</h2>
-        <a href="#" class="btn btn-warning me-2 mb-2">Reactivos</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Medios</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Tamiz</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Agitador</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Microbiologia</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Maeriales de lab</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Biogenics</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Lima</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Empresa Digital</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Maquinas</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Equipos</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Vidrio</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Polipropileno</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Gradilla</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Pinzas</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Los Olivos</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Insumos</a>
-        <a href="#" class="btn btn-warning me-2 mb-2">Varios</a>
-      </div>
-    </section>
-
-    <section class="py-5">
-      <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-sm-3 row-cols-lg-5">
-          <div class="col">
-            <div class="card mb-3 border-0">
-              <div class="row">
-                <div class="col-md-2 text-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M21.5 15a3 3 0 0 0-1.9-2.78l1.87-7a1 1 0 0 0-.18-.87A1 1 0 0 0 20.5 4H6.8l-.33-1.26A1 1 0 0 0 5.5 2h-2v2h1.23l2.48 9.26a1 1 0 0 0 1 .74H18.5a1 1 0 0 1 0 2h-13a1 1 0 0 0 0 2h1.18a3 3 0 1 0 5.64 0h2.36a3 3 0 1 0 5.82 1a2.94 2.94 0 0 0-.4-1.47A3 3 0 0 0 21.5 15Zm-3.91-3H9L7.34 6H19.2ZM9.5 20a1 1 0 1 1 1-1a1 1 0 0 1-1 1Zm8 0a1 1 0 1 1 1-1a1 1 0 0 1-1 1Z"/></svg>
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body p-0">
-                    <h5>Delivery</h5>
-                    <p class="card-text">Hacemos delivery al nivel Nacional.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-          </div>
-          <div class="col">
-            <div class="card mb-3 border-0">
-              <div class="row">
-                <div class="col-md-2 text-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19.63 3.65a1 1 0 0 0-.84-.2a8 8 0 0 1-6.22-1.27a1 1 0 0 0-1.14 0a8 8 0 0 1-6.22 1.27a1 1 0 0 0-.84.2a1 1 0 0 0-.37.78v7.45a9 9 0 0 0 3.77 7.33l3.65 2.6a1 1 0 0 0 1.16 0l3.65-2.6A9 9 0 0 0 20 11.88V4.43a1 1 0 0 0-.37-.78ZM18 11.88a7 7 0 0 1-2.93 5.7L12 19.77l-3.07-2.19A7 7 0 0 1 6 11.88v-6.3a10 10 0 0 0 6-1.39a10 10 0 0 0 6 1.39Zm-4.46-2.29l-2.69 2.7l-.89-.9a1 1 0 0 0-1.42 1.42l1.6 1.6a1 1 0 0 0 1.42 0L15 11a1 1 0 0 0-1.42-1.42Z"/></svg>
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body p-0">
-                    <h5>Entregas 100% seguras </h5>
-                    <p class="card-text">Cuando se trata de seguridad somos el N°1.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-          </div>
-          <div class="col">
-            <div class="card mb-3 border-0">
-              <div class="row">
-                <div class="col-md-2 text-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M22 5H2a1 1 0 0 0-1 1v4a3 3 0 0 0 2 2.82V22a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-9.18A3 3 0 0 0 23 10V6a1 1 0 0 0-1-1Zm-7 2h2v3a1 1 0 0 1-2 0Zm-4 0h2v3a1 1 0 0 1-2 0ZM7 7h2v3a1 1 0 0 1-2 0Zm-3 4a1 1 0 0 1-1-1V7h2v3a1 1 0 0 1-1 1Zm10 10h-4v-2a2 2 0 0 1 4 0Zm5 0h-3v-2a4 4 0 0 0-8 0v2H5v-8.18a3.17 3.17 0 0 0 1-.6a3 3 0 0 0 4 0a3 3 0 0 0 4 0a3 3 0 0 0 4 0a3.17 3.17 0 0 0 1 .6Zm2-11a1 1 0 0 1-2 0V7h2ZM4.3 3H20a1 1 0 0 0 0-2H4.3a1 1 0 0 0 0 2Z"/></svg>
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body p-0">
-                    <h5>Nuestras Tiendas</h5>
-                    <p class="card-text">Contamos con tiendas en todo el Perú.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-          </div>
-          <div class="col">
-            <div class="card mb-3 border-0">
-              <div class="row">
-                <div class="col-md-2 text-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8.35a3.07 3.07 0 0 0-3.54.53a3 3 0 0 0 0 4.24L11.29 16a1 1 0 0 0 1.42 0l2.83-2.83a3 3 0 0 0 0-4.24A3.07 3.07 0 0 0 12 8.35Zm2.12 3.36L12 13.83l-2.12-2.12a1 1 0 0 1 0-1.42a1 1 0 0 1 1.41 0a1 1 0 0 0 1.42 0a1 1 0 0 1 1.41 0a1 1 0 0 1 0 1.42ZM12 2A10 10 0 0 0 2 12a9.89 9.89 0 0 0 2.26 6.33l-2 2a1 1 0 0 0-.21 1.09A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20Zm0 18H5.41l.93-.93a1 1 0 0 0 0-1.41A8 8 0 1 1 12 20Z"/></svg>
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body p-0">
-                    <h5>Ahorro Garantizado</h5>
-                    <p class="card-text">Los mejores precios del mercado en cada compra.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-          </div>
-          <div class="col">
-            <div class="card mb-3 border-0">
-              <div class="row">
-                <div class="col-md-2 text-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M18 7h-.35A3.45 3.45 0 0 0 18 5.5a3.49 3.49 0 0 0-6-2.44A3.49 3.49 0 0 0 6 5.5A3.45 3.45 0 0 0 6.35 7H6a3 3 0 0 0-3 3v2a1 1 0 0 0 1 1h1v6a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3v-6h1a1 1 0 0 0 1-1v-2a3 3 0 0 0-3-3Zm-7 13H8a1 1 0 0 1-1-1v-6h4Zm0-9H5v-1a1 1 0 0 1 1-1h5Zm0-4H9.5A1.5 1.5 0 1 1 11 5.5Zm2-1.5A1.5 1.5 0 1 1 14.5 7H13ZM17 19a1 1 0 0 1-1 1h-3v-7h4Zm2-8h-6V9h5a1 1 0 0 1 1 1Z"/></svg>
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body p-0">
-                    <h5>Ofertas</h5>
-                    <p class="card-text">Contamos con ofertas en todo el año.</p>
-                  </div>
-                </div>
-              </div>
-              </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer class="py-5">
       <div class="container-fluid">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer-menu">
-              <img src="${pageContext.request.contextPath}/images/logo bio.jpg" alt="logo">
+              <img src="${pageContext.request.contextPath}/img/logoBio.jpg" alt="logo">
               <div class="social-links mt-5">
                 <ul class="d-flex list-unstyled gap-2">
                   <li>
@@ -2459,7 +1852,7 @@
                   </li>
                   <li>
                     <a href="#" class="btn btn-outline-light">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-1.874.794a5.152 5.152 0 0 0-3.374-1.242a5.232 5.232 0 0 0-5.223 5.063a11.032 11.032 0 0 1-6.814-3.924a1.012 1.012 0 0 0-.857-.365a.999.999 0 0 0-.785.5a5.276 5.276 0 0 0-.242 4.769l-.002.001a1.041 1.041 0 0 0-.496.89a3.042 3.042 0 0 0 .027.439a5.185 5.185 0 0 0 1.568 3.312a.998.998 0 0 0-.066.77a5.204 5.204 0 0 0 2.362 2.922a7.465 7.465 0 0 1-3.59.448A1 1 0 0 0 1.45 19.3a12.942 12.942 0 0 0 7.01 2.061a12.788 12.788 0 0 0 12.465-9.363a12.822 12.822 0 0 0 .535-3.646l-.001-.2a5.77 5.77 0 0 0 1.532-4.202Zm-3.306 3.212a.995.995 0 0 0-.234.702c.01.165.009.331.009.488a10.824 10.824 0 0 1-.454 3.08a10.685 10.685 0 0 1-10.546 7.93a10.938 10.938 0 0 1-2.55-.301a9.48 9.48 0 0 0 2.942-1.564a1 1 0 0 0-.602-1.786a3.208 3.208 0 0 1-2.214-.935q.224-.042.445-.105a1 1 0 0 0-.08-1.943a3.198 3.198 0 0 1-2.25-1.726a5.3 5.3 0 0 0 .545.046a1.02 1.02 0 0 0 .984-.696a1 1 0 0 0-.4-1.137a3.196 3.196 0 0 1-1.425-2.673c0-.066.002-.133.006-.198a13.014 13.014 0 0 0 8.21 3.48a1.02 1.02 0 0 0 .817-.36a1 1 0 0 0 .206-.867a3.157 3.157 0 0 1-.087-.729a3.23 3.23 0 0 1 3.226-3.226a3.184 3.184 0 0 1 2.345 1.02a.993.993 0 0 0 .921.298a9.27 9.27 0 0 0 1.212-.322a6.681 6.681 0 0 1-1.026 1.524Z"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-6.22-1.27a1 1 0 0 0-1.14 0a8 8 0 0 1-6.22 1.27a1 1 0 0 0-.84.2a1 1 0 0 0-.37.78v7.45a9 9 0 0 0 3.77 7.33l3.65 2.6a1 1 0 0 0 1.16 0l3.65-2.6A9 9 0 0 0 20 11.88V4.43a1 1 0 0 0-.37-.78ZM18 11.88a7 7 0 0 1-2.93 5.7L12 19.77l-3.07-2.19A7 7 0 0 1 6 11.88v-6.3a10 10 0 0 0 6-1.39a10 10 0 0 0 6 1.39Zm-4.46-2.29l-2.69 2.7l-.89-.9a1 1 0 0 0-1.42 1.42l1.6 1.6a1 1 0 0 0 1.42 0L15 11a1 1 0 0 0-1.42-1.42Z"/></svg>
                     </a>
                   </li>
                   <li>
@@ -2469,12 +1862,7 @@
                   </li>
                   <li>
                     <a href="#" class="btn btn-outline-light">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34 5.46a1.2 1.2 0 1 0 1.2 1.2a1.2 1.2 0 0 0-1.2-1.2Zm4.6 2.42a7.59 7.59 0 0 0-.46-2.43a4.94 4.94 0 0 0-1.16-1.77a4.7 4.7 0 0 0-1.77-1.15a7.3 7.3 0 0 0-2.43-.47C15.06 2 14.72 2 12 2s-3.06 0-4.12.06a7.3 7.3 0 0 0-2.43.47a4.78 4.78 0 0 0-1.77 1.15a4.7 4.7 0 0 0-1.15 1.77a7.3 7.3 0 0 0-.47 2.43C2 8.94 2 9.28 2 12s0 3.06.06 4.12a7.3 7.3 0 0 0 .47 2.43a4.7 4.7 0 0 0 1.15 1.77a4.78 4.78 0 0 0 1.77 1.15a7.3 7.3 0 0 0 2.43.47C8.94 22 9.28 22 12 22s3.06 0 4.12-.06a7.3 7.3 0 0 0 2.43-.47a4.7 4.7 0 0 0 1.77-1.15a4.85 4.85 0 0 0 1.16-1.77a7.59 7.59 0 0 0 .46-2.43c0-1.06.06-1.4.06-4.12s0-3.06-.06-4.12ZM20.14 16a5.61 5.61 0 0 1-.34 1.86a3.06 3.06 0 0 1-.75 1.15a3.19 3.19 0 0 1-1.15.75a5.61 5.61 0 0 1-1.86.34c-1 .05-1.37.06-4 .06s-3 0-4-.06a5.73 5.73 0 0 1-1.94-.3a3.27 3.27 0 0 1-1.1-.75a3 3 0 0 1-.74-1.15a5.54 5.54 0 0 1-.4-1.9c0-1-.06-1.37-.06-4s0-3 .06-4a5.54 5.54 0 0 1 .35-1.9A3 3 0 0 1 5 5a3.14 3.14 0 0 1 1.1-.8A5.73 5.73 0 0 1 8 3.86c1 0 1.37-.06 4-.06s3 0 4 .06a5.61 5.61 0 0 1 1.86.34a3.06 3.06 0 0 1 1.19.8a3.06 3.06 0 0 1 .75 1.1a5.61 5.61 0 0 1 .34 1.9c.05 1 .06 1.37.06 4s-.01 3-.06 4ZM12 6.87A5.13 5.13 0 1 0 17.14 12A5.12 5.12 0 0 0 12 6.87Zm0 8.46A3.33 3.33 0 1 1 15.33 12A3.33 3.33 0 0 1 12 15.33Z"/></svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="btn btn-outline-light">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M1.04 17.52q.1-.16.32-.02a21.308 21.308 0 0 0 10.88 2.9a21.524 21.524 0 0 0 7.74-1.46q.1-.04.29-.12t.27-.12a.356.356 0 0 1 .47.12q.17.24-.11.44q-.36.26-.92.6a14.99 14.99 0 0 1-3.84 1.58A16.175 16.175 0 0 1 12 22a16.017 16.017 0 0 1-5.9-1.09a16.246 16.246 0 0 1-4.98-3.07a.273.273 0 0 1-.12-.2a.215.215 0 0 1 .04-.12Zm6.02-5.7a4.036 4.036 0 0 1 .68-2.36A4.197 4.197 0 0 1 9.6 7.98a10.063 10.063 0 0 1 2.66-.66q.54-.06 1.76-.16v-.34a3.562 3.562 0 0 0-.28-1.72a1.5 1.5 0 0 0-1.32-.6h-.16a2.189 2.189 0 0 0-1.14.42a1.64 1.64 0 0 0-.62 1a.508.508 0 0 1-.4.46L7.8 6.1q-.34-.08-.34-.36a.587.587 0 0 1 .02-.14a3.834 3.834 0 0 1 1.67-2.64A6.268 6.268 0 0 1 12.26 2h.5a5.054 5.054 0 0 1 3.56 1.18a3.81 3.81 0 0 1 .37.43a3.875 3.875 0 0 1 .27.41a2.098 2.098 0 0 1 .18.52q.08.34.12.47a2.856 2.856 0 0 1 .06.56q.02.43.02.51v4.84a2.868 2.868 0 0 0 .15.95a2.475 2.475 0 0 0 .29.62q.14.19.46.61a.599.599 0 0 1 .12.32a.346.346 0 0 1-.16.28q-1.66 1.44-1.8 1.56a.557.557 0 0 1-.58.04q-.28-.24-.49-.46t-.3-.32a4.466 4.466 0 0 1-.29-.39q-.2-.29-.28-.39a4.91 4.91 0 0 1-2.2 1.52a6.038 6.038 0 0 1-1.68.2a3.505 3.505 0 0 1-2.53-.95a3.553 3.553 0 0 1-.99-2.69Zm3.44-.4a1.895 1.895 0 0 0 .39 1.25a1.294 1.294 0 0 0 1.05.47a1.022 1.022 0 0 0 .17-.02a1.022 1.022 0 0 1 .15-.02a2.033 2.033 0 0 0 1.3-1.08a3.13 3.13 0 0 0 .33-.83a3.8 3.8 0 0 0 .12-.73q.01-.28.01-.92v-.5a7.287 7.287 0 0 0-1.76.16a2.144 2.144 0 0 0-1.76 2.22Zm8.4 6.44a.626.626 0 0 1 .12-.16a3.14 3.14 0 0 1 .96-.46a6.52 6.52 0 0 1 1.48-.22a1.195 1.195 0 0 1 .38.02q.9.08 1.08.3a.655.655 0 0 1 .08.36v.14a4.56 4.56 0 0 1-.38 1.65a3.84 3.84 0 0 1-1.06 1.53a.302.302 0 0 1-.18.08a.177.177 0 0 1-.08-.02q-.12-.06-.06-.22a7.632 7.632 0 0 0 .74-2.42a.513.513 0 0 0-.08-.32q-.2-.24-1.12-.24q-.34 0-.8.04q-.5.06-.92.12a.232.232 0 0 1-.16-.04a.065.065 0 0 1-.02-.08a.153.153 0 0 1 .02-.06Z"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34 5.46a1.2 1.2 0 1 0 1.2 1.2a1.2 1.2 0 0 0-1.2-1.2Zm4.6 2.42a7.59 7.59 0 0 0-.46-2.43a4.94 4.94 0 0 0-1.16-1.77a4.7 4.7 0 0 0-1.77-1.15a7.3 7.3 0 0 0-2.43-.47C15.06 2 14.72 2 12 2s-3.06 0-4.12.06a7.3 7.3 0 0 0-2.43.47a4.78 4.78 0 0 0-1.77 1.15a4.7 4.7 0 0 0-1.15 1.77a7.3 7.3 0 0 0-.47 2.43C2 8.94 2 9.28 2 12s0 3.06.06 4.12a7.3 7.3 0 0 0 .47 2.43a4.7 4.7 0 0 0 1.15 1.77a4.78 4.78 0 0 0 1.77 1.15a7.3 7.3 0 0 0 2.43.47C8.94 22 9.28 22 12 22s3.06 0 4.12-.06a7.3 7.3 0 0 0 2.43-.47a4.7 4.7 0 0 0 1.77-1.15a4.85 4.85 0 0 0 1.16-1.77a7.59 7.59 0 0 0 .46-2.43c0-1.06.06-1.4.06-4.12s0-3.06-.06-4.12a7.3 7.3 0 0 0-.35-1.9A3 3 0 0 0 20.5 4H6.8l-.33-1.26A1 1 0 0 0 5.5 2h-2v2h1.23l2.48 9.26a1 1 0 0 0 1 .74H18.5a1 1 0 0 1 0 2h-13a1 1 0 0 0 0 2h1.18a3 3 0 1 0 5.64 0h2.36a3 3 0 1 0 5.82 1a2.94 2.94 0 0 0-.4-1.47A3 3 0 0 0 21.5 15Zm-3.91-3H9L7.34 6H19.2ZM9.5 20a1 1 0 1 1 1-1a1 1 0 0 1-1 1Zm8 0a1 1 0 1 1 1-1a1 1 0 0 1-1 1Z"/></svg>
                     </a>
                   </li>
                 </ul>
@@ -2591,3 +1979,4 @@
 
   </body>
 </html>
+
