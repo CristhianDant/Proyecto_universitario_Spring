@@ -16,4 +16,14 @@ public class ProductoServiceImp implements ProductoService {
     public List<Producto> Productos_listado() {
         return productoDAO.Productos_listado();
     }
+
+    @Override
+    public List<String> getMarcasUnicas() {
+        return productoDAO.getMarcasUnicas();
+    }
+
+    @Override
+    public List<Producto> getProductosPorMarca(String marca) {
+        return productoDAO.findByMarca(marca);
+    }
 }

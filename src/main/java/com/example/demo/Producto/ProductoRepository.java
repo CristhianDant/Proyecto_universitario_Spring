@@ -35,19 +35,43 @@ public class ProductoRepository implements ProductoDAO {
     @Override
     public List<Producto> Productos_listado() {
         String query = """
-            SELECT 
-                id_producto, 
-                cod_producto, 
-                descripcion, 
+            SELECT
+                id_producto,
+                cod_producto,
+                descripcion,
                 um,
-                vencimiento, 
-                cantidad, 
-                almacen, 
-                marca, 
+                vencimiento,
+                cantidad,
+                almacen,
+                marca,
                 procedencia
             FROM productos
-            ORDER BY id_producto
             """;
         return jdbcTemplate.query(query, ProductoRowMapper);
+    }
+
+    @Override
+    public List<String> getMarcasUnicas() {
+        String query = "SELECT DISTINCT marca FROM productos ORDER BY marca";
+        return jdbcTemplate.queryForList(query, String.class);
+    }
+
+    @Override
+    public List<Producto> findByMarca(String marca) {
+        String query = """
+            SELECT
+                id_producto,
+                cod_producto,
+                descripcion,
+                um,
+                vencimiento,
+                cantidad,
+                almacen,
+                marca,
+                procedencia
+            FROM productos
+            WHERE marca = ?
+            """;
+        return jdbcTemplate.query(query, ProductoRowMapper, marca);
     }
 }

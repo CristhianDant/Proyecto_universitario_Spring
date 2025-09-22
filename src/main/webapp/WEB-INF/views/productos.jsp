@@ -65,6 +65,23 @@
           Lista de Productos
         </div>
         <div class="card-body">
+          <form action="${pageContext.request.contextPath}/productos/" method="get" class="mb-3">
+            <div class="row align-items-end">
+              <div class="col-md-4">
+                <label for="marca-filter" class="form-label">Filtrar por Marca:</label>
+                <select name="marca" id="marca-filter" class="form-select">
+                  <option value="TODAS" ${'TODAS' == marcaSeleccionada || marcaSeleccionada == null ? 'selected' : ''}>Todas las Marcas</option>
+                  <c:forEach items="${marcas}" var="marca">
+                    <option value="${marca}" ${marca == marcaSeleccionada ? 'selected' : ''}>${marca}</option>
+                  </c:forEach>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-info w-100">Filtrar</button>
+              </div>
+            </div>
+          </form>
+
           <table class="table table-striped">
             <thead>
               <tr>
