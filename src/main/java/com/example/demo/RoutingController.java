@@ -12,4 +12,11 @@ public class RoutingController {
         model.addAttribute("message", "Welcome to the Home Page!");
         return "index";
     }
+
+
+    @GetMapping("/productos_html")
+    public String productosHtml(Model model) {
+        model.addAttribute("message", "Welcome to the Productos Page!");
+        return "productos";
+    }
 }
