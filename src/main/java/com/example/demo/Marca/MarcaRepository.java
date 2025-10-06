@@ -63,7 +63,7 @@ public class MarcaRepository implements MarcaDAO {
     @Override
     public int actualizarMarca(Marca marca) {
         String query = """
-            UPDATE marcas 
+            UPDATE marcas
             SET nombre_marca = ?, procedencia = ?
             WHERE id_marca = ?
             """;
@@ -72,8 +72,6 @@ public class MarcaRepository implements MarcaDAO {
                 marca.getProcedencia(),
                 marca.getIdMarca());
     }
-
-
 
     @Override
     public boolean existeMarcaPorNombre(String nombreMarca) {
