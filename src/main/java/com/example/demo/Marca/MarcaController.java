@@ -32,14 +32,6 @@ public class MarcaController {
                               @RequestParam String procedencia,
                               Model model) {
 
-        // Verificar si ya existe una marca con ese nombre
-        if (marcaService.existeMarcaPorNombre(nombreMarca)) {
-            List<Marca> marcas = marcaService.listarMarcas();
-            model.addAttribute("marcas", marcas);
-            model.addAttribute("mensaje", "Error: Ya existe una marca con ese nombre");
-            return "marca/listar_marca";
-        }
-
         // Crear nueva marca
         Marca nuevaMarca = new Marca();
         nuevaMarca.setNombreMarca(nombreMarca);
