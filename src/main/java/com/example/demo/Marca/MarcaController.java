@@ -70,7 +70,7 @@ public class MarcaController {
         }
     }
 
-    // Endpoint POST - /marcas/actualizar - Actualiza una marca y redirige a una_marca.jsp
+    // Endpoint POST - /marcas/actualizar - Actualiza una marca y redirige a listar_marca.jsp
     @PostMapping("/actualizar")
     public String actualizarMarca(@RequestParam int idMarca,
                                  @RequestParam String nombreMarca,
@@ -86,16 +86,14 @@ public class MarcaController {
         int resultado = marcaService.actualizarMarca(marca);
 
         if (resultado > 0) {
-            // Actualización exitosa - recargar la marca actualizada
-            Marca marcaActualizada = marcaService.buscarMarcaPorId(idMarca);
-            model.addAttribute("marca", marcaActualizada);
-            model.addAttribute("mensaje", "Marca actualizada correctamente");
-            return "marca/lista_marca";
+            // Actualización exitosa - redirigir al listado
+            return "redirect:/marcas/";
         } else {
-            // Error en la actualización
-            model.addAttribute("marca", marca);
+            // Error en la actualización - mostrar error en el listado
+            List<Marca> marcas = marcaService.listarMarcas();
+            model.addAttribute("marcas", marcas);
             model.addAttribute("mensaje", "Error al actualizar la marca");
-            return "marca/lista_marca";
+            return "marca/listar_marca";
         }
     }
 }
