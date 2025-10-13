@@ -53,10 +53,14 @@ CREATE TABLE IF NOT EXISTS marcas (
 CREATE TABLE IF NOT EXISTS documento_venta (
   id_documento INT PRIMARY KEY AUTO_INCREMENT,
   razon_social VARCHAR(150) NOT NULL,
+  nro_serie VARCHAR(10) NOT NULL,
+  nro_documento VARCHAR(20) NOT NULL,
   direccion_entrega VARCHAR(255),
   referencia VARCHAR(255),
   total DECIMAL(10,2) NOT NULL,
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+  fecha_vencimiento DATE,
+  fecha_entrega DATE,
   id_user INT
 );
 
