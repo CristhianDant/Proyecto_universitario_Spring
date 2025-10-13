@@ -14,9 +14,8 @@ public class RoutingController {
     }
 
 
-    @GetMapping("/productos_html")
-    public String productosHtml(Model model) {
-        model.addAttribute("message", "Welcome to the Productos Page!");
-        return "productos";
+    @GetMapping("/dashboard")
+    public String dashboard() {
+        return "dashboard";
     }
 }

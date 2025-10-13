@@ -106,7 +106,7 @@
                         <a href="#" class="rounded-circle p-2 mx-1" data-bs-toggle="offcanvas"
                            data-bs-target="#offcanvasSearch" aria-controls="offcanvasSearch" title="Buscar">
                             <svg width="24" height="24" viewBox="0 0 24 24"><use xlink:href="#search"></use></svg>
-                        </a>
+                        </a><
                     </li>
                 </ul>
 

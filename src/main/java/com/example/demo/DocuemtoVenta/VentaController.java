@@ -11,4 +11,9 @@ public class VentaController {
     public String documentoVenta(){
         return "documento_de_venta/documento_venta";
     }
+
+    @RequestMapping("/gestion_ventas")
+    public String listadoVentas(){
+        return "documento_de_venta/gestion_documento";
+    }
 }
