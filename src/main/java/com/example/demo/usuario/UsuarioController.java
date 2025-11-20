@@ -18,7 +18,7 @@ public class UsuarioController {
     }
 
     // Mostrar formulario de registro de usuario
-    @GetMapping("/crear")
+    @GetMapping("/reguistar_usuario")
     public String mostrarFormularioCrear(Model model) {
         return "usuario/crear_usuario";
     }
