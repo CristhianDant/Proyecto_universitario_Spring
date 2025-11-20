@@ -1,7 +1,7 @@
 package com.example.demo.usuario;
 
 public  class Usuario {
-    private int id_user ;
+    private Integer id_user ;
     private String username ;
     private String password ;
     private Boolean superuser ;
@@ -13,7 +13,7 @@ public  class Usuario {
     public Usuario() {
     }
 
-    public Usuario(int id_user, String username, String password, Boolean superuser, String email, String ruc_dni_cliente, String telefono, String direcccion_fiscal) {
+    public Usuario(Integer id_user, String username, String password, Boolean superuser, String email, String ruc_dni_cliente, String telefono, String direcccion_fiscal) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
@@ -24,10 +24,10 @@ public  class Usuario {
         this.direcccion_fiscal = direcccion_fiscal;
     }
 
-    public int getId_user() {
+    public Integer getId_user() {
         return id_user;
     }
-    public void setId_user(int id_user) {
+    public void setId_user(Integer id_user) {
         this.id_user = id_user;
     }
     public String getUsername() {

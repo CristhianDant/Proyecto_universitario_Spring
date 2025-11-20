@@ -32,23 +32,28 @@ public class UsuarioController {
                                @RequestParam(required = false) String direccion_fiscal,
                                Model model) {
 
-        // Crear nuevo usuario
-        Usuario nuevoUsuario = new Usuario();
-        nuevoUsuario.setUsername(username);
-        nuevoUsuario.setPassword(password);
-        nuevoUsuario.setEmail(email);
-        nuevoUsuario.setRuc_dni_cliente(ruc_dni_cliente);
-        nuevoUsuario.setTelefono(telefono);
-        nuevoUsuario.setSuperuser(false);
-        nuevoUsuario.setDirecccion_fiscal(direccion_fiscal);
+        try {
+            // Crear nuevo usuario
+            Usuario nuevoUsuario = new Usuario();
+            nuevoUsuario.setUsername(username);
+            nuevoUsuario.setPassword(password);
+            nuevoUsuario.setEmail(email);
+            nuevoUsuario.setRuc_dni_cliente(ruc_dni_cliente);
+            nuevoUsuario.setTelefono(telefono);
+            nuevoUsuario.setSuperuser(false);
+            nuevoUsuario.setDirecccion_fiscal(direccion_fiscal);
 
-        int resultado = usuarioService.crearUsuario(nuevoUsuario);
+            int resultado = usuarioService.crearUsuario(nuevoUsuario);
 
-        if (resultado > 0) {
-            model.addAttribute("mensaje", "Usuario creado exitosamente");
-            return "usuario/crear_usuario";
-        } else {
-            model.addAttribute("mensaje", "Error al crear el usuario");
+            if (resultado > 0) {
+                model.addAttribute("mensaje", "Usuario creado exitosamente");
+                return "usuario/crear_usuario";
+            } else {
+                model.addAttribute("mensaje", "Error al crear el usuario");
+                return "usuario/crear_usuario";
+            }
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Error al crear el usuario: " + e.getMessage());
             return "usuario/crear_usuario";
         }
     }

@@ -16,10 +16,10 @@ public class UsuarioRepository implements UsuarioDAO {
 
     private final RowMapper<Usuario> usuarioRowMapper = (rs, rowNum) -> {
         return new Usuario(
-                rs.getInt("id_user"),
+                rs.getObject("id_user", Integer.class),
                 rs.getString("username"),
                 rs.getString("password"),
-                rs.getBoolean("superuser"),
+                rs.getObject("superuser", Boolean.class),
                 rs.getString("email"),
                 rs.getString("ruc_dni_cliente"),
                 rs.getString("telefono"),
@@ -61,6 +61,25 @@ public class UsuarioRepository implements UsuarioDAO {
             WHERE id_user = ?
             """;
         List<Usuario> usuarios = jdbcTemplate.query(query, usuarioRowMapper, idUsuario);
+        return usuarios.isEmpty() ? null : usuarios.get(0);
+    }
+
+    @Override
+    public Usuario buscarUsuarioPorUsername(String username) {
+        String query = """
+            SELECT
+                id_user,
+                username,
+                password,
+                superuser,
+                email,
+                ruc_dni_cliente,
+                telefono,
+                direccion_fiscal
+            FROM users
+            WHERE username = ?
+            """;
+        List<Usuario> usuarios = jdbcTemplate.query(query, usuarioRowMapper, username);
         return usuarios.isEmpty() ? null : usuarios.get(0);
     }
 
@@ -117,4 +136,3 @@ public class UsuarioRepository implements UsuarioDAO {
                 usuario.getId_user());
     }
 }
-
