@@ -8,17 +8,17 @@ CREATE TABLE IF NOT EXISTS estudiante (
 
 
 
-CREATE TABLE IF NOT EXISTS productos (
-    id_producto INT PRIMARY KEY AUTO_INCREMENT,
-    cod_producto VARCHAR(255) UNIQUE,
-    descripcion VARCHAR(150),
-    um INT,
-    vencimiento DATE,
-    cantidad DECIMAL(10,2),
-    almacen INT,
-    marca VARCHAR(255),
-    procedencia INT
-);
+--CREATE TABLE IF NOT EXISTS productos (
+--    id_producto INT PRIMARY KEY AUTO_INCREMENT,
+--    cod_producto VARCHAR(255) UNIQUE,
+--    descripcion VARCHAR(150),
+--    um INT,
+--    vencimiento DATE,
+--    cantidad DECIMAL(10,2),
+--    almacen INT,
+--    marca VARCHAR(255),
+--    procedencia INT
+--);
 
 
 ----------------------------------------------------------------------------------------------
@@ -41,14 +41,14 @@ CREATE TABLE IF NOT EXISTS marcas (
   procedencia VARCHAR(200)
 );
 
---CREATE TABLE IF NOT EXISTS productos (
---  id_producto INT PRIMARY KEY AUTO_INCREMENT,
---  nombre_producto VARCHAR(255) NOT NULL,
---  descripcion TEXT,
---  precio DECIMAL(10,2) NOT NULL,
---  id_marca INT,
---  link_imaguen VARCHAR(200)
---);
+CREATE TABLE IF NOT EXISTS productos (
+  id_producto INT PRIMARY KEY AUTO_INCREMENT,
+  nombre_producto VARCHAR(255) NOT NULL,
+  descripcion TEXT,
+  precio DECIMAL(10,2) NOT NULL,
+  id_marca INT,
+  link_imaguen VARCHAR(200)
+);
 
 CREATE TABLE IF NOT EXISTS documento_venta (
   id_documento INT PRIMARY KEY AUTO_INCREMENT,
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS detalle_documento_venta (
   subtotal DECIMAL(10,2) NOT NULL
 );
 
--- ALTER TABLE productos ADD FOREIGN KEY (id_marca) REFERENCES marcas(id_marca);
+ALTER TABLE productos ADD FOREIGN KEY (id_marca) REFERENCES marcas(id_marca);
 
 ALTER TABLE detalle_documento_venta ADD FOREIGN KEY (id_documento) REFERENCES documento_venta(id_documento);
 
