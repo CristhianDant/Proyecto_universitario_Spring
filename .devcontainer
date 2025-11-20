@@ -1,0 +1,42 @@
+{
+  // Nombre para tu entorno de desarrollo
+  "name": "Java 17 & Spring Boot",
+
+  // Usamos una imagen base universal de Microsoft.
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    // Aquí está la magia:
+    // 1. Instalamos Java (jdk)
+    // 2. Especificamos la versión 17
+    // 3. Le decimos que también instale Maven
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": "true"
+    }
+  },
+
+  // --- Configuración específica de Spring Boot ---
+
+  // Redirige automáticamente el puerto 8080 (el estándar de Spring Boot)
+  // para que puedas acceder a tu app desde el navegador.
+  "forwardPorts": [8080],
+
+  // Instala extensiones útiles de VS Code automáticamente
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // El paquete esencial para Java
+        "vscjava.vscode-java-pack",
+        // Herramientas específicas para Spring Boot
+        "vmware.vscode-spring-boot",
+        // Soporte para Maven
+        "vscjava.vscode-maven"
+      ]
+    }
+  },
+
+  // Ejecuta este comando DESPUÉS de crear el contenedor
+  // (Opcional, pero útil para verificar)
+  "postCreateCommand": "java -version && mvn -version"
+}
