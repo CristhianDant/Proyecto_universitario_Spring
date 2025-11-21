@@ -21,34 +21,8 @@
         <main class="container-fluid py-4">
           <h1 class="text-center mb-4">Gestión de Productos</h1>
 
-          <!-- Formulario para crear nuevo producto -->
-          <div class="card">
-              <div class="card-header">Nuevo Producto</div>
-              <div class="card-body">
-                  <form action="${pageContext.request.contextPath}/productos/guardar" method="post" enctype="multipart/form-data">
-                      <div class="mb-3">
-                          <label for="nombreProducto" class="form-label">Nombre del Producto</label>
-                          <input type="text" class="form-control" id="nombreProducto" name="nombreProducto" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="descripcion" class="form-label">Descripción</label>
-                          <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
-                      </div>
-                      <div class="mb-3">
-                          <label for="precio" class="form-label">Precio</label>
-                          <input type="number" class="form-control" id="precio" name="precio" step="0.01" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="idMarca" class="form-label">ID Marca</label>
-                          <input type="number" class="form-control" id="idMarca" name="idMarca" required>
-                      </div>
-                      <div class="mb-3">
-                          <label for="linkImageu" class="form-label">Imagen del Producto</label>
-                          <input type="file" class="form-control" id="linkImageu" name="linkImageu" accept="image/png, image/jpeg" required>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Crear Producto</button>
-                  </form>
-              </div>
+          <div class="mb-3">
+              <a href="${pageContext.request.contextPath}/productos/crear" class="btn btn-success">Crear Nuevo Producto</a>
           </div>
 
           <!-- Listado de productos -->

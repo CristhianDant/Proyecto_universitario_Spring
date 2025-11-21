@@ -48,6 +48,7 @@
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Procedencia</th>
+                                <th>Anulado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -57,6 +58,7 @@
                                     <td>${marca.idMarca}</td>
                                     <td>${marca.nombreMarca}</td>
                                     <td>${marca.procedencia}</td>
+                                    <td>${marca.anulado ? 'Sí' : 'No'}</td>
                                     <td>
                                         <a href="${pageContext.request.contextPath}/marcas/editar/${marca.idMarca}" class="btn btn-sm btn-warning">Editar</a>
                                     </td>
@@ -64,7 +66,7 @@
                             </c:forEach>
                             <c:if test="${empty marcas}">
                                 <tr>
-                                    <td colspan="4" class="text-center">No hay marcas registradas</td>
+                                    <td colspan="5" class="text-center">No hay marcas registradas</td>
                                 </tr>
                             </c:if>
                         </tbody>

@@ -36,6 +36,7 @@ public class MarcaController {
         Marca nuevaMarca = new Marca();
         nuevaMarca.setNombreMarca(nombreMarca);
         nuevaMarca.setProcedencia(procedencia);
+        nuevaMarca.setAnulado(false);
 
         int resultado = marcaService.crearMarca(nuevaMarca);
 
@@ -67,6 +68,7 @@ public class MarcaController {
     public String actualizarMarca(@RequestParam int idMarca,
                                  @RequestParam String nombreMarca,
                                  @RequestParam String procedencia,
+                                 @RequestParam(required = false) boolean anulado,
                                  Model model) {
 
         // Crear objeto marca con los datos actualizados
@@ -74,6 +76,7 @@ public class MarcaController {
         marca.setIdMarca(idMarca);
         marca.setNombreMarca(nombreMarca);
         marca.setProcedencia(procedencia);
+        marca.setAnulado(anulado);
 
         int resultado = marcaService.actualizarMarca(marca);
 
@@ -87,5 +90,12 @@ public class MarcaController {
             model.addAttribute("mensaje", "Error al actualizar la marca");
             return "marca/listar_marca";
         }
+    }
+
+    // Endpoint GET - /marcas/marcas_activas - Lista todas las marcas activas en formato JSON
+    @GetMapping("/marcar_activas")
+    @ResponseBody
+    public List<Marca> listarMarcasActivas() {
+        return marcaService.listarMarcasActivas();
     }
 }

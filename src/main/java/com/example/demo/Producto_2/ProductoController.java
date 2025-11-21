@@ -1,5 +1,6 @@
 package com.example.demo.Producto_2;
 
+import com.example.demo.Marca.MarcaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,11 +18,13 @@ import java.util.List;
 public class ProductoController {
 
     private final ProductoService productoService;
+    private final MarcaService marcaService;
     private final String UPLOAD_DIR_RELATIVE = "/img/";
 
 
-    public ProductoController(ProductoService productoService) {
+    public ProductoController(ProductoService productoService, MarcaService marcaService) {
         this.productoService = productoService;
+        this.marcaService = marcaService;
     }
 
     // Endpoint principal - GET /productos/ - Lista todos los productos
@@ -29,8 +32,16 @@ public class ProductoController {
     public String listarProductos(Model model) {
         List<Producto_Marca> productos = productoService.listarProductos();
         model.addAttribute("productos", productos);
+        model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
         model.addAttribute("mensaje", "Lista de productos");
         return "producto/productos";
+    }
+
+    // Endpoint GET - /productos/crear - Muestra el formulario para crear producto
+    @GetMapping("/crear")
+    public String mostrarCrearProducto(Model model) {
+        model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+        return "producto/crear_producto";
     }
 
     // Endpoint POST - /productos/guardar - Guarda un nuevo producto y redirige a listar
@@ -77,6 +88,7 @@ public class ProductoController {
 
         if (producto != null) {
             model.addAttribute("producto", producto);
+            model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
             return "producto/un_producto";
         } else {
             return "redirect:/productos/";

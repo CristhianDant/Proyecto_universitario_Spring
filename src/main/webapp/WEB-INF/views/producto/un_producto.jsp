@@ -31,8 +31,13 @@
                         <input type="number" class="form-control" id="precio" name="precio" step="0.01" value="${producto.precio}" required>
                     </div>
                     <div class="mb-3">
-                        <label for="idMarca" class="form-label">ID Marca</label>
-                        <input type="number" class="form-control" id="idMarca" name="idMarca" value="${producto.id_marca}" required>
+                        <label for="idMarca" class="form-label">Marca</label>
+                        <input type="text" list="marcas" class="form-control" id="idMarca" name="idMarca" value="${producto.id_marca}" required>
+                        <datalist id="marcas">
+                            <c:forEach var="marca" items="${marcasActivas}">
+                                <option value="${marca.idMarca}">${marca.nombreMarca}</option>
+                            </c:forEach>
+                        </datalist>
                     </div>
                     <div class="mb-3">
                         <label for="linkImageu" class="form-label">Imagen Actual</label>

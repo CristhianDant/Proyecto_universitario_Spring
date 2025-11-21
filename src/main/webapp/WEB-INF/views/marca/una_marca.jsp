@@ -26,6 +26,13 @@
                         <label for="procedencia" class="form-label">Procedencia</label>
                         <input type="text" class="form-control" id="procedencia" name="procedencia" value="${marca.procedencia}" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="anulado" class="form-label">Anulado</label>
+                        <select class="form-control" id="anulado" name="anulado">
+                            <option value="false" ${!marca.anulado ? 'selected' : ''}>No</option>
+                            <option value="true" ${marca.anulado ? 'selected' : ''}>Sí</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Actualizar Marca</button>
                     <a href="${pageContext.request.contextPath}/marcas/" class="btn btn-secondary">Cancelar</a>
                 </form>
@@ -34,4 +41,3 @@
     </main>
 </body>
 </html>
-
