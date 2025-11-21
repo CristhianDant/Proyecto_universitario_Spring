@@ -4,5 +4,6 @@
         <a class="nav-link" href="/productos/">GESTION DE PRODUCTOS</a>
         <a class="nav-link" href="/marcas/">GESTION DE MARCA</a>
         <a class="nav-link" href="/venta/gestion_ventas">GESTION DE DOCUMENTOS</a>
+        <a class="nav-link" href="/usuario/gestion">GESTION DE USUARIOS</a>
     </nav>
 </aside>

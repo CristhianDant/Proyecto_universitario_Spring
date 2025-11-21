@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/usuario")
@@ -22,6 +25,8 @@ public class UsuarioController {
     public String mostrarFormularioCrear(Model model) {
         return "usuario/crear_usuario";
     }
+
+
 
     @PostMapping("/crear")
     public String crearUsuario(@RequestParam String username,
@@ -55,6 +60,65 @@ public class UsuarioController {
         } catch (Exception e) {
             model.addAttribute("mensaje", "Error al crear el usuario: " + e.getMessage());
             return "usuario/crear_usuario";
+        }
+    }
+
+    // Listar usuarios
+    @GetMapping("/gestion")
+    public String listarUsuarios(Model model) {
+        List<Usuario> usuarios = usuarioService.listarUsuarios();
+        model.addAttribute("usuarios", usuarios);
+        return "usuario/usuarios";
+    }
+
+    // Editar usuario
+    @GetMapping("/editar/{id}")
+    public String editarUsuario(@PathVariable int id, Model model) {
+        Usuario usuario = usuarioService.buscarUsuarioPorId(id);
+        if (usuario != null) {
+            model.addAttribute("usuario", usuario);
+            return "usuario/editar_usuario";
+        } else {
+            return "redirect:/usuario/gestion";
+        }
+    }
+
+    // Actualizar usuario
+    @PostMapping("/actualizar")
+    public String actualizarUsuario(@RequestParam int id_user,
+                                    @RequestParam String username,
+                                    @RequestParam String password,
+                                    @RequestParam(required = false) String email,
+                                    @RequestParam(required = false) String ruc_dni_cliente,
+                                    @RequestParam(required = false) String telefono,
+                                    @RequestParam(required = false) String direccion_fiscal,
+                                    @RequestParam boolean superuser,
+                                    Model model) {
+        try {
+            Usuario usuario = new Usuario();
+            usuario.setId_user(id_user);
+            usuario.setUsername(username);
+            usuario.setPassword(password);
+            usuario.setEmail(email);
+            usuario.setRuc_dni_cliente(ruc_dni_cliente);
+            usuario.setTelefono(telefono);
+            usuario.setDirecccion_fiscal(direccion_fiscal);
+            usuario.setSuperuser(superuser);
+
+            int resultado = usuarioService.actualizarUsuario(usuario);
+
+            if (resultado > 0) {
+                return "redirect:/usuario/gestion";
+            } else {
+                model.addAttribute("mensaje", "Error al actualizar el usuario");
+                model.addAttribute("usuario", usuario);
+                return "usuario/editar_usuario";
+            }
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Error al actualizar el usuario: " + e.getMessage());
+            Usuario usuario = usuarioService.buscarUsuarioPorId(id_user);
+            model.addAttribute("usuario", usuario);
+            return "usuario/editar_usuario";
         }
     }
 
