@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,10 +27,11 @@
                 <div class="card shadow-lg border-0 rounded-lg">
                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Iniciar Sesión</h3></div>
                     <div class="card-body">
-                        <form id="login-form" action="${pageContext.request.contextPath}/login" method="post">
+                        <div id="error-div"></div>
+                        <form id="login-form">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="username" name="username" type="text" placeholder="Usuario" required />
-                                <label for="username">Usuario</label>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Email" required />
+                                <label for="email">Email</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="password" name="password" type="password" placeholder="Contraseña" required />
@@ -56,6 +58,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/js/plugins.js"></script>
 <script src="${pageContext.request.contextPath}/js/script.js"></script>
+<script src="${pageContext.request.contextPath}/js/login.js"></script>
 
 </body>
 </html>

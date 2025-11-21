@@ -67,19 +67,30 @@ public class UsuarioController {
     // Listar usuarios
     @GetMapping("/gestion")
     public String listarUsuarios(Model model) {
-        List<Usuario> usuarios = usuarioService.listarUsuarios();
-        model.addAttribute("usuarios", usuarios);
-        return "usuario/usuarios";
+        try {
+            List<Usuario> usuarios = usuarioService.listarUsuarios();
+            model.addAttribute("usuarios", usuarios);
+            return "usuario/usuarios";
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Error al listar usuarios: " + e.getMessage());
+            return "usuario/usuarios";
+        }
     }
 
     // Editar usuario
     @GetMapping("/editar/{id}")
     public String editarUsuario(@PathVariable int id, Model model) {
-        Usuario usuario = usuarioService.buscarUsuarioPorId(id);
-        if (usuario != null) {
-            model.addAttribute("usuario", usuario);
-            return "usuario/editar_usuario";
-        } else {
+        try {
+            Usuario usuario = usuarioService.buscarUsuarioPorId(id);
+            if (usuario != null) {
+                model.addAttribute("usuario", usuario);
+                return "usuario/editar_usuario";
+            } else {
+                model.addAttribute("mensaje", "Usuario no encontrado");
+                return "redirect:/usuario/gestion";
+            }
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Error al buscar el usuario: " + e.getMessage());
             return "redirect:/usuario/gestion";
         }
     }

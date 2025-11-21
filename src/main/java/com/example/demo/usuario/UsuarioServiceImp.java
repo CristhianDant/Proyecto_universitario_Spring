@@ -68,6 +68,35 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public int actualizarUsuario(Usuario usuario) {
+        // Verificar que el RUC o DNI tenga entre 7 y 11 dígitos
+        String rucDni = usuario.getRuc_dni_cliente();
+        if (rucDni != null && !rucDni.matches("\\d{7,11}")) {
+            throw new IllegalArgumentException("El RUC o DNI debe tener entre 7 y 11 dígitos numéricos.");
+        }
+
+        // Verificar que el teléfono tenga exactamente 9 dígitos
+        String telefono = usuario.getTelefono();
+        if (telefono != null && !telefono.matches("\\d{9}")) {
+            throw new IllegalArgumentException("El teléfono debe tener exactamente 9 dígitos.");
+        }
+
+        // Verificar que el email no se repita (excluyendo el usuario actual)
+        if (usuario.getEmail() != null && !usuario.getEmail().isEmpty()) {
+            Usuario existenteEmail = usuarioDAO.buscarUsuarioPorEmail(usuario.getEmail());
+            if (existenteEmail != null && !existenteEmail.getId_user().equals(usuario.getId_user())) {
+                throw new IllegalArgumentException("El email ya está registrado por otro usuario.");
+            }
+        }
+
+        // Verificar que el username no se repita (excluyendo el usuario actual)
+        if (usuario.getUsername() != null && !usuario.getUsername().isEmpty()) {
+            Usuario existenteUsername = usuarioDAO.buscarUsuarioPorUsername(usuario.getUsername());
+            if (existenteUsername != null && !existenteUsername.getId_user().equals(usuario.getId_user())) {
+                throw new IllegalArgumentException("El nombre de usuario ya está registrado por otro usuario.");
+            }
+        }
+
+        // Si todas las validaciones pasan, actualizar el usuario
         return usuarioDAO.actualizarUsuario(usuario);
     }
 }
