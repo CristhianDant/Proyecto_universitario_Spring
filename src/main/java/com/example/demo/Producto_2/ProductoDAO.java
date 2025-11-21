@@ -3,9 +3,9 @@ package com.example.demo.Producto_2;
 import java.util.List;
 
 public interface ProductoDAO {
-    List<Producto> listarProductos();
+    List<Producto_Marca> listarProductos();
     int crearProducto(Producto producto);
-    Producto buscarProductoPorId(int idProducto);
+    Producto_Marca buscarProductoPorId(int idProducto);
     int actualizarProducto(Producto producto);
 }
 

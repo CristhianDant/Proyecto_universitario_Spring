@@ -13,7 +13,7 @@ public class ProductoServiceImp implements ProductoService {
     }
 
     @Override
-    public List<Producto> listarProductos() {
+    public List<Producto_Marca> listarProductos() {
         return productoDAO.listarProductos();
     }
 
@@ -23,7 +23,7 @@ public class ProductoServiceImp implements ProductoService {
     }
 
     @Override
-    public Producto buscarProductoPorId(int idProducto) {
+    public Producto_Marca buscarProductoPorId(int idProducto) {
         return productoDAO.buscarProductoPorId(idProducto);
     }
 
@@ -32,4 +32,3 @@ public class ProductoServiceImp implements ProductoService {
         return productoDAO.actualizarProducto(producto);
     }
 }
-

@@ -66,6 +66,7 @@
                               <th>Descripción</th>
                               <th>Precio</th>
                               <th>Marca</th>
+                              <th>Anulado</th>
                               <th>Imagen</th>
                               <th>Acciones</th>
                           </tr>
@@ -77,7 +78,8 @@
                                   <td>${producto.nombre_producto}</td>
                                   <td>${producto.descripcion}</td>
                                   <td>${producto.precio}</td>
-                                  <td>${producto.id_marca}</td>
+                                  <td>${producto.nombre_marca}</td>
+                                  <td>${producto.anulado ? 'Sí' : 'No'}</td>
                                   <td>
                                       <img src="${pageContext.request.contextPath}${producto.link_imaguen}" alt="${producto.nombre_producto}" style="max-width: 50px; max-height: 50px;">
                                   </td>
@@ -88,7 +90,7 @@
                           </c:forEach>
                           <c:if test="${empty productos}">
                               <tr>
-                                  <td colspan="7" class="text-center">No hay productos registrados</td>
+                                  <td colspan="8" class="text-center">No hay productos registrados</td>
                               </tr>
                           </c:if>
                       </tbody>

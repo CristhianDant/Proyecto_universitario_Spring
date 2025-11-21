@@ -1,7 +1,5 @@
 package com.example.demo.Producto_2;
 
-import java.math.BigDecimal;
-
 public class Producto {
 
     private int id_producto;
@@ -10,18 +8,20 @@ public class Producto {
     private double precio;
     private int id_marca;
     private String link_imaguen;
+    private boolean anulado;
 
 
     public Producto() {
     }
 
-    public Producto(int id_producto, String nombre_producto, String descripcion, double precio, int id_marca, String link_imaguen) {
+    public Producto(int id_producto, String nombre_producto, String descripcion, double precio, int id_marca, String link_imaguen, boolean anulado) {
         this.id_producto = id_producto;
         this.nombre_producto = nombre_producto;
         this.descripcion = descripcion;
         this.precio = precio;
         this.id_marca = id_marca;
         this.link_imaguen = link_imaguen;
+        this.anulado = anulado;
     }
 
     public int getId_producto() {
@@ -70,5 +70,13 @@ public class Producto {
 
     public void setLink_imaguen(String link_imaguen) {
         this.link_imaguen = link_imaguen;
+    }
+
+    public boolean isAnulado() {
+        return anulado;
+    }
+
+    public void setAnulado(boolean anulado) {
+        this.anulado = anulado;
     }
 }

@@ -42,6 +42,13 @@
                         <label for="linkImageu" class="form-label">Subir Nueva Imagen (opcional)</label>
                         <input type="file" class="form-control" id="linkImageu" name="linkImageu" accept="image/png, image/jpeg">
                     </div>
+                    <div class="mb-3">
+                        <label for="anulado" class="form-label">Anulado</label>
+                        <select class="form-control" id="anulado" name="anulado">
+                            <option value="false" ${!producto.anulado ? 'selected' : ''}>No</option>
+                            <option value="true" ${producto.anulado ? 'selected' : ''}>Sí</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Actualizar Producto</button>
                     <a href="${pageContext.request.contextPath}/productos/" class="btn btn-secondary">Cancelar</a>
                 </form>

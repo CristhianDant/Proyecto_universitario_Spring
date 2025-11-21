@@ -27,7 +27,7 @@ public class ProductoController {
     // Endpoint principal - GET /productos/ - Lista todos los productos
     @GetMapping("/")
     public String listarProductos(Model model) {
-        List<Producto> productos = productoService.listarProductos();
+        List<Producto_Marca> productos = productoService.listarProductos();
         model.addAttribute("productos", productos);
         model.addAttribute("mensaje", "Lista de productos");
         return "producto/productos";
@@ -56,13 +56,14 @@ public class ProductoController {
         nuevoProducto.setPrecio(precio);
         nuevoProducto.setId_marca(idMarca);
         nuevoProducto.setLink_imaguen(linkImagenGuardada);
+        nuevoProducto.setAnulado(false);
 
         int resultado = productoService.crearProducto(nuevoProducto);
 
         if (resultado > 0) {
             return "redirect:/productos/";
         } else {
-            List<Producto> productos = productoService.listarProductos();
+            List<Producto_Marca> productos = productoService.listarProductos();
             model.addAttribute("productos", productos);
             model.addAttribute("mensaje", "Error al crear el producto");
             return "producto/productos";
@@ -90,6 +91,7 @@ public class ProductoController {
                                     @RequestParam double precio,
                                     @RequestParam int idMarca,
                                     @RequestParam("linkImageu") MultipartFile file,
+                                    @RequestParam(required = false) boolean anulado,
                                     Model model) {
 
         String linkImagenGuardada = guardarImagen(file, nombreProducto, idMarca);
@@ -108,6 +110,7 @@ public class ProductoController {
         producto.setPrecio(precio);
         producto.setId_marca(idMarca);
         producto.setLink_imaguen(linkImagenGuardada);
+        producto.setAnulado(anulado);
 
         int resultado = productoService.actualizarProducto(producto);
 
@@ -116,7 +119,7 @@ public class ProductoController {
             return "redirect:/productos/";
         } else {
             // Error en la actualización - mostrar error en el listado
-            List<Producto> productos = productoService.listarProductos();
+            List<Producto_Marca> productos = productoService.listarProductos();
             model.addAttribute("productos", productos);
             model.addAttribute("mensaje", "Error al actualizar el producto");
             return "producto/productos";

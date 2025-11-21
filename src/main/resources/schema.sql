@@ -50,7 +50,8 @@ CREATE TABLE IF NOT EXISTS productos (
   descripcion TEXT,
   precio DECIMAL(10,2) NOT NULL,
   id_marca INT,
-  link_imaguen VARCHAR(200)
+  link_imaguen VARCHAR(200),
+  anulado BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS documento_venta (
