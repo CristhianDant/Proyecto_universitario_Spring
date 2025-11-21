@@ -9,11 +9,12 @@ public  class Usuario {
     private String ruc_dni_cliente ;
     private String telefono ;
     private String direcccion_fiscal  ;
+    private Boolean anulado ;
 
     public Usuario() {
     }
 
-    public Usuario(Integer id_user, String username, String password, Boolean superuser, String email, String ruc_dni_cliente, String telefono, String direcccion_fiscal) {
+    public Usuario(Integer id_user, String username, String password, Boolean superuser, String email, String ruc_dni_cliente, String telefono, String direcccion_fiscal, Boolean anulado) {
         this.id_user = id_user;
         this.username = username;
         this.password = password;
@@ -22,6 +23,7 @@ public  class Usuario {
         this.ruc_dni_cliente = ruc_dni_cliente;
         this.telefono = telefono;
         this.direcccion_fiscal = direcccion_fiscal;
+        this.anulado = anulado;
     }
 
     public Integer getId_user() {
@@ -71,6 +73,12 @@ public  class Usuario {
     }
     public void setDirecccion_fiscal(String direcccion_fiscal) {
         this.direcccion_fiscal = direcccion_fiscal;
+    }
+    public Boolean getAnulado() {
+        return anulado;
+    }
+    public void setAnulado(Boolean anulado) {
+        this.anulado = anulado;
     }
 
 }

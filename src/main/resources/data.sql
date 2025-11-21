@@ -9,4 +9,5 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_marca, link_imag
 INSERT INTO productos (nombre_producto, descripcion, precio, id_marca, link_imaguen) VALUES ('Estufa De Laboratorio', 'Estufa para secado y esterilización de material.', 1200.00, 1, '');
 
 -- Nuevos inserts para usuario test
-INSERT INTO users (id_user, username, password, superuser, email, ruc_dni_cliente, telefono, direccion_fiscal) VALUES (1, 'root', 'rootpass', TRUE, 'admin@email.com' , '00000000', '000000000', 'Avenida Principal n°456');
+INSERT INTO users (id_user, username, password, superuser, email, ruc_dni_cliente, telefono, direccion_fiscal,anulado) VALUES (1, 'root', 'rootpass', TRUE, 'admin@email.com' , '00000000', '000000000', 'Avenida Principal n°456', FALSE);
+

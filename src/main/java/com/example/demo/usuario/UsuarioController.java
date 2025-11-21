@@ -47,6 +47,7 @@ public class UsuarioController {
             nuevoUsuario.setTelefono(telefono);
             nuevoUsuario.setSuperuser(false);
             nuevoUsuario.setDirecccion_fiscal(direccion_fiscal);
+            nuevoUsuario.setAnulado(false);
 
             int resultado = usuarioService.crearUsuario(nuevoUsuario);
 
@@ -93,6 +94,7 @@ public class UsuarioController {
                                     @RequestParam(required = false) String telefono,
                                     @RequestParam(required = false) String direccion_fiscal,
                                     @RequestParam boolean superuser,
+                                    @RequestParam boolean anulado,
                                     Model model) {
         try {
             Usuario usuario = new Usuario();
@@ -104,6 +106,7 @@ public class UsuarioController {
             usuario.setTelefono(telefono);
             usuario.setDirecccion_fiscal(direccion_fiscal);
             usuario.setSuperuser(superuser);
+            usuario.setAnulado(anulado);
 
             int resultado = usuarioService.actualizarUsuario(usuario);
 

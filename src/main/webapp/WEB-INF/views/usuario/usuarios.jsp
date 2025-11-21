@@ -37,6 +37,7 @@
                               <th>Teléfono</th>
                               <th>Dirección Fiscal</th>
                               <th>Superuser</th>
+                              <th>Anulado</th>
                               <th>Acciones</th>
                           </tr>
                       </thead>
@@ -50,6 +51,7 @@
                                   <td>${usuario.telefono}</td>
                                   <td>${usuario.direcccion_fiscal}</td>
                                   <td>${usuario.superuser ? 'Sí' : 'No'}</td>
+                                  <td>${usuario.anulado ? 'Sí' : 'No'}</td>
                                   <td>
                                       <a href="${pageContext.request.contextPath}/usuario/editar/${usuario.id_user}" class="btn btn-sm btn-warning">Editar</a>
                                   </td>
@@ -57,7 +59,7 @@
                           </c:forEach>
                           <c:if test="${empty usuarios}">
                               <tr>
-                                  <td colspan="8" class="text-center">No hay usuarios registrados</td>
+                                  <td colspan="9" class="text-center">No hay usuarios registrados</td>
                               </tr>
                           </c:if>
                       </tbody>

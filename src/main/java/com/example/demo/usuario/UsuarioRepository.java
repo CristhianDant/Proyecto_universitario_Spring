@@ -23,7 +23,8 @@ public class UsuarioRepository implements UsuarioDAO {
                 rs.getString("email"),
                 rs.getString("ruc_dni_cliente"),
                 rs.getString("telefono"),
-                rs.getString("direccion_fiscal")
+                rs.getString("direccion_fiscal"),
+                rs.getObject("anulado", Boolean.class)
         );
     };
 
@@ -38,7 +39,8 @@ public class UsuarioRepository implements UsuarioDAO {
                 email,
                 ruc_dni_cliente,
                 telefono,
-                direccion_fiscal
+                direccion_fiscal,
+                anulado
             FROM users
             ORDER BY id_user
             """;
@@ -56,7 +58,8 @@ public class UsuarioRepository implements UsuarioDAO {
                 email,
                 ruc_dni_cliente,
                 telefono,
-                direccion_fiscal
+                direccion_fiscal,
+                anulado
             FROM users
             WHERE id_user = ?
             """;
@@ -75,7 +78,8 @@ public class UsuarioRepository implements UsuarioDAO {
                 email,
                 ruc_dni_cliente,
                 telefono,
-                direccion_fiscal
+                direccion_fiscal,
+                anulado
             FROM users
             WHERE username = ?
             """;
@@ -94,7 +98,8 @@ public class UsuarioRepository implements UsuarioDAO {
                 email,
                 ruc_dni_cliente,
                 telefono,
-                direccion_fiscal
+                direccion_fiscal,
+                anulado
             FROM users
             WHERE email = ?
             """;
@@ -105,8 +110,8 @@ public class UsuarioRepository implements UsuarioDAO {
     @Override
     public int crearUsuario(Usuario usuario) {
         String query = """
-            INSERT INTO users (username, password, superuser, email, ruc_dni_cliente, telefono, direccion_fiscal)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO users (username, password, superuser, email, ruc_dni_cliente, telefono, direccion_fiscal , anulado)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
             """;
         return jdbcTemplate.update(query,
                 usuario.getUsername(),
@@ -115,14 +120,15 @@ public class UsuarioRepository implements UsuarioDAO {
                 usuario.getEmail(),
                 usuario.getRuc_dni_cliente(),
                 usuario.getTelefono(),
-                usuario.getDirecccion_fiscal());
+                usuario.getDirecccion_fiscal(),
+                usuario.getAnulado());
     }
 
     @Override
     public int actualizarUsuario(Usuario usuario) {
         String query = """
             UPDATE users
-            SET username = ?, password = ?, superuser = ?, email = ?, ruc_dni_cliente = ?, telefono = ?, direccion_fiscal = ?
+            SET username = ?, password = ?, superuser = ?, email = ?, ruc_dni_cliente = ?, telefono = ?, direccion_fiscal = ? , anulado = ?
             WHERE id_user = ?
             """;
         return jdbcTemplate.update(query,
@@ -133,6 +139,7 @@ public class UsuarioRepository implements UsuarioDAO {
                 usuario.getRuc_dni_cliente(),
                 usuario.getTelefono(),
                 usuario.getDirecccion_fiscal(),
+                usuario.getAnulado(),
                 usuario.getId_user());
     }
 }

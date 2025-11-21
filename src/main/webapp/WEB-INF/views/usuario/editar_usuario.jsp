@@ -58,6 +58,14 @@
                             <option value="true" ${usuario.superuser ? 'selected' : ''}>Sí</option>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="anulado" class="form-label">Anulado</label>
+                        <select class="form-control" id="anulado" name="anulado">
+                            <option value="false" ${!usuario.anulado ? 'selected' : ''}>No</option>
+                            <option value="true" ${usuario.anulado ? 'selected' : ''}>Sí</option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-primary w-100">Actualizar Usuario</button>
                     <a href="${pageContext.request.contextPath}/usuario/gestion" class="btn btn-secondary w-100 mt-2">Cancelar</a>
                 </form>

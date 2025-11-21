@@ -32,7 +32,8 @@ CREATE TABLE IF NOT EXISTS users (
   email VARCHAR(100) UNIQUE,
   ruc_dni_cliente VARCHAR(15) UNIQUE,
   telefono VARCHAR(12),
-  direccion_fiscal VARCHAR(255)
+  direccion_fiscal VARCHAR(255),
+  anulado BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS marcas (
