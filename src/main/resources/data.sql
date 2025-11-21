@@ -1,7 +1,7 @@
 -- Nuevos inserts para la tabla marcas
-INSERT INTO marcas (nombre_marca, procedencia) SELECT 'LABOREX', 'Perú' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'LABOREX');
-INSERT INTO marcas (nombre_marca, procedencia) SELECT 'BIOTECH', 'Estados Unidos' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'BIOTECH');
-INSERT INTO marcas (nombre_marca, procedencia) SELECT 'MERCK', 'Alemania' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'MERCK');
+INSERT INTO marcas (nombre_marca, procedencia, link_imaguen) SELECT 'LABOREX', 'Perú', '' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'LABOREX');
+INSERT INTO marcas (nombre_marca, procedencia, link_imaguen) SELECT 'BIOTECH', 'Estados Unidos', '' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'BIOTECH');
+INSERT INTO marcas (nombre_marca, procedencia, link_imaguen) SELECT 'MERCK', 'Alemania', '' WHERE NOT EXISTS (SELECT 1 FROM marcas WHERE nombre_marca = 'MERCK');
 
 -- Nuevos inserts para la tabla productos
 INSERT INTO productos (nombre_producto, descripcion, precio, id_marca, link_imaguen) SELECT 'Asa De Siembra', 'Instrumento de laboratorio para siembra de microorganismos.', 15.50, 1, '' WHERE NOT EXISTS (SELECT 1 FROM productos WHERE nombre_producto = 'Asa De Siembra');

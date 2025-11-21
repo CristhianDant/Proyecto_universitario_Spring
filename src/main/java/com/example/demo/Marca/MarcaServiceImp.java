@@ -18,6 +18,10 @@ public class MarcaServiceImp implements MarcaService {
     }
 
     @Override
+    public List<Marca> listarMarcasActivas() {return marcaDAO.listarMarcasActivas();
+    }
+
+    @Override
     public int crearMarca(Marca marca) {
         return marcaDAO.crearMarca(marca);
     }

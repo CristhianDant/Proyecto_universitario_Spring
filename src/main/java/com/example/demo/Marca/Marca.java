@@ -5,11 +5,15 @@ public class Marca {
     private int idMarca;
     private String nombreMarca;
     private String procedencia;
+    private boolean anulado;
+    private String link_imaguen;
 
-    public Marca(int idMarca, String nombreMarca, String procedencia) {
+    public Marca(int idMarca, String nombreMarca, String procedencia, boolean anulado, String link_imaguen) {
         this.idMarca = idMarca;
         this.nombreMarca = nombreMarca;
         this.procedencia = procedencia;
+        this.anulado = anulado;
+        this.link_imaguen = link_imaguen;
     }
 
     public Marca() {
@@ -37,5 +41,21 @@ public class Marca {
 
     public void setProcedencia(String procedencia) {
         this.procedencia = procedencia;
+    }
+
+    public boolean isAnulado() {
+        return anulado;
+    }
+
+    public void setAnulado(boolean anulado) {
+        this.anulado = anulado;
+    }
+
+    public String getLink_imaguen() {
+        return link_imaguen;
+    }
+
+    public void setLink_imaguen(String link_imaguen) {
+        this.link_imaguen = link_imaguen;
     }
 }

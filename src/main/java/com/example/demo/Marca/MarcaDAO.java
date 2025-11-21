@@ -7,6 +7,9 @@ public interface MarcaDAO {
     // Listar todas las marcas
     List<Marca> listarMarcas();
 
+    // Listar las marcas activas
+    List<Marca> listarMarcasActivas();
+
     // Crear una nueva marca
     int crearMarca(Marca marca);
 

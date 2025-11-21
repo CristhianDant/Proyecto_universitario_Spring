@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS marcas (
   id_marca INT PRIMARY KEY AUTO_INCREMENT,
   nombre_marca VARCHAR(100) UNIQUE NOT NULL,
-  procedencia VARCHAR(200)
+  procedencia VARCHAR(200),
+  anulado BOOLEAN NOT NULL DEFAULT FALSE,
+  link_imaguen VARCHAR(200)
 );
 
 CREATE TABLE IF NOT EXISTS productos (

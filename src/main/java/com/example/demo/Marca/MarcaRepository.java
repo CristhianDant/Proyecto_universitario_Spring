@@ -18,7 +18,9 @@ public class MarcaRepository implements MarcaDAO {
         return new Marca(
                 rs.getInt("id_marca"),
                 rs.getString("nombre_marca"),
-                rs.getString("procedencia")
+                rs.getString("procedencia"),
+                rs.getBoolean("anulado"),
+                rs.getString("link_imaguen")
         );
     };
 
@@ -28,8 +30,26 @@ public class MarcaRepository implements MarcaDAO {
             SELECT
                 id_marca,
                 nombre_marca,
-                procedencia
+                procedencia,
+                anulado,
+                link_imaguen
             FROM marcas
+            ORDER BY nombre_marca
+            """;
+        return jdbcTemplate.query(query, MarcaRowMapper);
+    }
+
+    @Override
+    public List<Marca> listarMarcasActivas() {
+        String query = """
+            SELECT
+                id_marca,
+                nombre_marca,
+                procedencia,
+                anulado,
+                link_imaguen
+            FROM marcas
+            WHERE anulado = false
             ORDER BY nombre_marca
             """;
         return jdbcTemplate.query(query, MarcaRowMapper);
@@ -41,7 +61,9 @@ public class MarcaRepository implements MarcaDAO {
             SELECT
                 id_marca,
                 nombre_marca,
-                procedencia
+                procedencia,
+                anulado,
+                link_imaguen
             FROM marcas
             WHERE id_marca = ?
             """;
@@ -52,24 +74,28 @@ public class MarcaRepository implements MarcaDAO {
     @Override
     public int crearMarca(Marca marca) {
         String query = """
-            INSERT INTO marcas (nombre_marca, procedencia)
-            VALUES (?, ?)
+            INSERT INTO marcas (nombre_marca, procedencia, anulado, link_imaguen)
+            VALUES (?, ?, ?, ?)
             """;
         return jdbcTemplate.update(query,
                 marca.getNombreMarca(),
-                marca.getProcedencia());
+                marca.getProcedencia(),
+                marca.isAnulado(),
+                marca.getLink_imaguen());
     }
 
     @Override
     public int actualizarMarca(Marca marca) {
         String query = """
             UPDATE marcas
-            SET nombre_marca = ?, procedencia = ?
+            SET nombre_marca = ?, procedencia = ?, anulado = ?, link_imaguen = ?
             WHERE id_marca = ?
             """;
         return jdbcTemplate.update(query,
                 marca.getNombreMarca(),
                 marca.getProcedencia(),
+                marca.isAnulado(),
+                marca.getLink_imaguen(),
                 marca.getIdMarca());
     }
 

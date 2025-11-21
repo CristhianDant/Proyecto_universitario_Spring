@@ -52,8 +52,7 @@ public class UsuarioController {
             int resultado = usuarioService.crearUsuario(nuevoUsuario);
 
             if (resultado > 0) {
-                model.addAttribute("mensaje", "Usuario creado exitosamente");
-                return "usuario/crear_usuario";
+                return "redirect:/login/";
             } else {
                 model.addAttribute("mensaje", "Error al crear el usuario");
                 return "usuario/crear_usuario";
