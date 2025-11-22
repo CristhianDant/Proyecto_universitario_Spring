@@ -1,16 +1,12 @@
 package com.example.demo.Producto_2;
 
 import com.example.demo.Marca.MarcaService;
+import com.example.demo.Utilis.save_imagenes;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -19,7 +15,6 @@ public class ProductoController {
 
     private final ProductoService productoService;
     private final MarcaService marcaService;
-    private final String UPLOAD_DIR_RELATIVE = "/img/";
 
 
     public ProductoController(ProductoService productoService, MarcaService marcaService) {
@@ -53,11 +48,11 @@ public class ProductoController {
                                   @RequestParam("linkImageu") MultipartFile file,
                                   Model model) {
 
-        String linkImagenGuardada = guardarImagen(file, nombreProducto, idMarca);
+        String linkImagenGuardada = save_imagenes.guardarImagen(file);
         if (linkImagenGuardada == null) {
             model.addAttribute("mensaje", "Error al guardar la imagen.");
-            model.addAttribute("productos", productoService.listarProductos());
-            return "producto/productos";
+            model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+            return "producto/crear_producto";
         }
 
         // Crear nuevo producto
@@ -69,15 +64,19 @@ public class ProductoController {
         nuevoProducto.setLink_imaguen(linkImagenGuardada);
         nuevoProducto.setAnulado(false);
 
-        int resultado = productoService.crearProducto(nuevoProducto);
-
-        if (resultado > 0) {
-            return "redirect:/productos/";
-        } else {
-            List<Producto_Marca> productos = productoService.listarProductos();
-            model.addAttribute("productos", productos);
-            model.addAttribute("mensaje", "Error al crear el producto");
-            return "producto/productos";
+        try {
+            int resultado = productoService.crearProducto(nuevoProducto);
+            if (resultado > 0) {
+                return "redirect:/productos/";
+            } else {
+                model.addAttribute("mensaje", "Error al crear el producto");
+                model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+                return "producto/crear_producto";
+            }
+        } catch (Exception e) {
+            model.addAttribute("mensaje", e.getMessage());
+            model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+            return "producto/crear_producto";
         }
     }
 
@@ -106,7 +105,7 @@ public class ProductoController {
                                     @RequestParam(required = false) boolean anulado,
                                     Model model) {
 
-        String linkImagenGuardada = guardarImagen(file, nombreProducto, idMarca);
+        String linkImagenGuardada = save_imagenes.guardarImagen(file);
         if (linkImagenGuardada == null) {
             // Si no se sube una nueva imagen, mantenemos la anterior.
             Producto productoExistente = productoService.buscarProductoPorId(idProducto);
@@ -124,64 +123,23 @@ public class ProductoController {
         producto.setLink_imaguen(linkImagenGuardada);
         producto.setAnulado(anulado);
 
-        int resultado = productoService.actualizarProducto(producto);
-
-        if (resultado > 0) {
-            // Actualización exitosa - redirigir al listado
-            return "redirect:/productos/";
-        } else {
-            // Error en la actualización - mostrar error en el listado
-            List<Producto_Marca> productos = productoService.listarProductos();
-            model.addAttribute("productos", productos);
-            model.addAttribute("mensaje", "Error al actualizar el producto");
-            return "producto/productos";
+        try {
+            int resultado = productoService.actualizarProducto(producto);
+            if (resultado > 0) {
+                // Actualización exitosa - redirigir al listado
+                return "redirect:/productos/";
+            } else {
+                // Error en la actualización - mostrar error en el listado
+                model.addAttribute("mensaje", "Error al actualizar el producto");
+                model.addAttribute("producto", producto);
+                model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+                return "producto/un_producto";
+            }
+        } catch (Exception e) {
+            model.addAttribute("mensaje", e.getMessage());
+            model.addAttribute("producto", producto);
+            model.addAttribute("marcasActivas", marcaService.listarMarcasActivas());
+            return "producto/un_producto";
         }
     }
-
-    private String guardarImagen(MultipartFile file, String nombreProducto, int idMarca) {
-    if (file.isEmpty()) {
-        return null;
-    }
-
-    try {
-        // Leer el contenido del archivo en un array de bytes para poder usarlo varias veces
-        byte[] bytes = file.getBytes();
-
-        // Obtener la ruta absoluta del directorio de carga en el sistema de archivos
-        String uploadDirPath = new File("src/main/resources/static" + UPLOAD_DIR_RELATIVE).getAbsolutePath();
-        File uploadDir = new File(uploadDirPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdirs();
-        }
-
-        String originalFilename = file.getOriginalFilename();
-        String extension = "";
-        if (originalFilename != null && originalFilename.contains(".")) {
-            extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-        }
-
-        String nuevoNombre = nombreProducto.replace(" ", "_") + "___" + idMarca + extension;
-        Path pathDestino = Paths.get(uploadDirPath + File.separator + nuevoNombre);
-
-        // Escribir los bytes en el primer destino (src)
-        Files.write(pathDestino, bytes);
-
-        // También copiar al directorio target/classes para que esté disponible inmediatamente
-        String targetDirPath = new File("target/classes/static" + UPLOAD_DIR_RELATIVE).getAbsolutePath();
-        File targetDir = new File(targetDirPath);
-        if (!targetDir.exists()) {
-            targetDir.mkdirs();
-        }
-        Path pathDestinoTarget = Paths.get(targetDirPath + File.separator + nuevoNombre);
-        // Escribir los mismos bytes en el segundo destino (target)
-        Files.write(pathDestinoTarget, bytes);
-
-
-        return UPLOAD_DIR_RELATIVE + nuevoNombre; // Retorna la ruta relativa para la BD
-
-    } catch (IOException e) {
-        e.printStackTrace();
-        return null;
-    }
-}
 }

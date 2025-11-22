@@ -1,5 +1,8 @@
 package com.example.demo.Producto_2;
 
+import com.example.demo.Marca.Marca;
+import com.example.demo.Marca.MarcaService;
+import com.example.demo.Utilis.StringUtils;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -7,9 +10,11 @@ import java.util.List;
 public class ProductoServiceImp implements ProductoService {
 
     private final ProductoDAO productoDAO;
+    private final MarcaService marcaService;
 
-    public ProductoServiceImp(ProductoDAO productoDAO) {
+    public ProductoServiceImp(ProductoDAO productoDAO, MarcaService marcaService) {
         this.productoDAO = productoDAO;
+        this.marcaService = marcaService;
     }
 
     @Override
@@ -19,6 +24,14 @@ public class ProductoServiceImp implements ProductoService {
 
     @Override
     public int crearProducto(Producto producto) {
+        // Capitalizar nombre de producto
+        producto.setNombre_producto(StringUtils.capitalize(producto.getNombre_producto()));
+
+        // Validar marca
+        Marca marca = marcaService.buscarMarcaPorId(producto.getId_marca());
+        if (marca == null || marca.isAnulado()) {
+            throw new IllegalArgumentException("Marca no existe o está anulada");
+        }
         return productoDAO.crearProducto(producto);
     }
 
@@ -29,6 +42,20 @@ public class ProductoServiceImp implements ProductoService {
 
     @Override
     public int actualizarProducto(Producto producto) {
+        // Capitalizar nombre de producto
+        producto.setNombre_producto(StringUtils.capitalize(producto.getNombre_producto()));
+
+        // Validar nombre de producto
+        String nombre = producto.getNombre_producto();
+        if (nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("Nombre de producto no puede ser nulo o vacío");
+        }
+
+        // Validar marca
+        Marca marca = marcaService.buscarMarcaPorId(producto.getId_marca());
+        if (marca == null || marca.isAnulado()) {
+            throw new IllegalArgumentException("Marca no existe o está anulada");
+        }
         return productoDAO.actualizarProducto(producto);
     }
 }

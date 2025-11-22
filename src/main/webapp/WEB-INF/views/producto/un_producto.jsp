@@ -13,6 +13,7 @@
     <jsp:include page="../estructura/header.jsp" />
     <main class="container mt-5">
         <h1 class="text-center mb-4">Editar Producto</h1>
+        <c:if test="${not empty mensaje}"><div class="alert alert-danger">${mensaje}</div></c:if>
         <div class="card">
             <div class="card-header">Modificar Producto</div>
             <div class="card-body">

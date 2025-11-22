@@ -20,6 +20,7 @@
         <jsp:include page="../estructura/aside.jsp" />
         <main class="container-fluid py-4">
           <h1 class="text-center mb-4">Crear Producto</h1>
+          <c:if test="${not empty mensaje}"><div class="alert alert-danger">${mensaje}</div></c:if>
 
           <!-- Formulario para crear nuevo producto -->
           <div class="card">
