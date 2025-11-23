@@ -23,6 +23,16 @@ public class ProductoServiceImp implements ProductoService {
     }
 
     @Override
+    public List<Producto_Marca> listarProductosActivos() {
+        return productoDAO.listarProductosActivos();
+    }
+
+    @Override
+    public List<Producto_Marca> buscarProductosPorMarca(int idMarca) {
+        return productoDAO.buscarProductosPorMarca(idMarca);
+    }
+
+    @Override
     public int crearProducto(Producto producto) {
         // Capitalizar nombre de producto
         producto.setNombre_producto(StringUtils.capitalize(producto.getNombre_producto()));

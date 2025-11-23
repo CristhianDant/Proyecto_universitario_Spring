@@ -126,17 +126,11 @@ public class MarcaController {
         }
     }
 
-    // Endpoint GET - /marcas/marcas_activas - Lista todas las marcas activas en formato JSON
-    @GetMapping("/marcar_activas")
-    @ResponseBody
-    public List<Marca> listarMarcasActivas() {
-        return marcaService.listarMarcasActivas();
-    }
 
-    // Endpoint GET - /marcas/api/lista_marcas - Lista todas las marcas activas en formato API
-    @GetMapping("/api/lista_marcas")
+    // Endpoint GET - /marcas/api/activas - Lista todas las marcas activas en formato API
+    @GetMapping("/api/activas")
     @ResponseBody
-    public List<Marca> apiListaMarcas() {
+    public List<Marca> apiMarcasActivas() {
         return marcaService.listarMarcasActivas();
     }
 }

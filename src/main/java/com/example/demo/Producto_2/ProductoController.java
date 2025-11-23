@@ -142,4 +142,11 @@ public class ProductoController {
             return "producto/un_producto";
         }
     }
+
+    // Endpoint GET - /productos/api/activos - Lista todos los productos activos en formato API
+    @GetMapping("/api/activos")
+    @ResponseBody
+    public List<Producto_Marca> apiProductosActivos() {
+        return productoService.listarProductosActivos();
+    }
 }

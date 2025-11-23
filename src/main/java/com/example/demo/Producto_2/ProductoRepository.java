@@ -46,6 +46,26 @@ public class ProductoRepository implements ProductoDAO {
     }
 
     @Override
+    public List<Producto_Marca> listarProductosActivos() {
+        String query = """
+            SELECT
+                p.id_producto,
+                p.nombre_producto,
+                p.descripcion,
+                p.precio,
+                p.id_marca,
+                p.link_imaguen,
+                p.anulado,
+                m.nombre_marca
+            FROM productos p
+            INNER JOIN marcas m ON p.id_marca = m.id_marca
+            WHERE p.anulado = false
+            ORDER BY p.id_producto;
+            """;
+        return jdbcTemplate.query(query, productoMarcaRowMapper);
+    }
+
+    @Override
     public Producto_Marca buscarProductoPorId(int idProducto) {
         String query = """
             SELECT
@@ -95,5 +115,25 @@ public class ProductoRepository implements ProductoDAO {
                 producto.getLink_imaguen(),
                 producto.isAnulado(),
                 producto.getId_producto());
+    }
+
+    @Override
+    public List<Producto_Marca> buscarProductosPorMarca(int idMarca) {
+        String query = """
+            SELECT
+                p.id_producto,
+                p.nombre_producto,
+                p.descripcion,
+                p.precio,
+                p.id_marca,
+                p.link_imaguen,
+                p.anulado,
+                m.nombre_marca
+            FROM productos p
+            INNER JOIN marcas m ON p.id_marca = m.id_marca
+            WHERE p.id_marca = ? AND p.anulado = false
+            ORDER BY p.id_producto;
+            """;
+        return jdbcTemplate.query(query, productoMarcaRowMapper, idMarca);
     }
 }
