@@ -54,19 +54,7 @@
                                 </tr>
                             </thead>
                             <tbody id="detalle-venta-body">
-                                <!-- Las filas de productos se agregarán aquí dinámicamente -->
-                                <tr>
-                                    <td>Asa de Siembra</td>
-                                    <td>2</td>
-                                    <td>S/ 3.00</td>
-                                    <td>S/ 6.00</td>
-                                </tr>
-                                 <tr>
-                                    <td>Rack para crioviales</td>
-                                    <td>1</td>
-                                    <td>S/ 32.00</td>
-                                    <td>S/ 32.00</td>
-                                </tr>
+                                <!-- Las filas de productos se agregarán aquí dinámicamente desde el carrito -->
                             </tbody>
                         </table>
                         <!-- Total y Acciones -->
@@ -86,5 +74,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="${pageContext.request.contextPath}/js/extracion_de_carito.js"></script>
 </body>
 </html>

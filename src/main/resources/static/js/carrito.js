@@ -5,12 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".btn-add-to-cart").forEach(btn => {
     btn.addEventListener("click", function () {
       const productoItem = btn.closest(".product-item");
+      const idProducto = productoItem.getAttribute("data-producto-id");
       const nombre = productoItem.querySelector("h3").textContent;
       const precioTexto = productoItem.querySelector(".price").textContent.replace("S/", "").trim();
       const cantidadInput = productoItem.querySelector("input[name='quantity']");
       const cantidad = parseInt(cantidadInput.value);
 
       const producto = {
+        idProducto: parseInt(idProducto),
         nombre: nombre,
         precio: parseFloat(precioTexto),
         cantidad: cantidad,
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-      const existe = carrito.find(p => p.nombre === producto.nombre);
+      const existe = carrito.find(p => p.idProducto === producto.idProducto);
       if (existe) {
         existe.cantidad += cantidad;
       } else {

@@ -253,7 +253,7 @@
                   
                     <c:forEach var="producto" items="${productosActivos}">
                       <div class="col">
-                        <div class="product-item" data-marca-id="${producto.id_marca}">
+                        <div class="product-item" data-marca-id="${producto.id_marca}" data-producto-id="${producto.id_producto}">
                           <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                           <figure>
                             <a href="/" title="Product Title">
