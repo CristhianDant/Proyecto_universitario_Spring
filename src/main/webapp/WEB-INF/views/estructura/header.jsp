@@ -58,7 +58,7 @@
             <div class="col-sm-4 col-lg-3 text-center text-sm-start">
                 <div class="logo-container main-logo">
                     <a href="/">
-                        <img src="${pageContext.request.contextPath}/img/logohead.png" alt="BioLab Logo" class="img-fluid">
+                        <img src="${pageContext.request.contextPath}/img/logohead.webp" alt="BioLab Logo" class="img-fluid">
                     </a>
                 </div>
             </div>

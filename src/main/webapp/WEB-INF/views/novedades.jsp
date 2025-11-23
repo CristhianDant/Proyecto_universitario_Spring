@@ -10,7 +10,7 @@
 
   <header>
     <div class="logo-container">
-    <img src="${pageContext.request.contextPath}/img/logo biog.png" alt="FoodMart Logo" class="logo">
+    <img src="${pageContext.request.contextPath}/img/logo biog.webp" alt="FoodMart Logo" class="logo">
         <h1> </h1>
 
   </div>
@@ -36,18 +36,18 @@
 
     <div class="slider" id="slider">
       <div class="slide">
-        <img src="${pageContext.request.contextPath}/images/balanza.jpg" alt="Novedad 1">
+        <img src="${pageContext.request.contextPath}/images/balanza.wepb" alt="Novedad 1">
         <h3>Nuevo producto Balanza Analitica</h3>
         <p>Una balanza analítica es una báscula que mide masa con un alto grado de precisión. Típicamente tienen un rango de pesaje entre los 100 y los 300 g, y una lectura de 0,1 mg (4 decimales), 
             de 0,01 mg (5 decimales, también denominada balanza semi-micro) o de 0,001 mg (6 decimales, también denominada micro balanza).</p>
       </div>
       <div class="slide">
-        <img src="${pageContext.request.contextPath}/img/kits.jpg" alt="Novedad 2">
+        <img src="${pageContext.request.contextPath}/img/kits.wepb" alt="Novedad 2">
         <h3>Promoción de Julio</h3>
         <p>Durante este mes, aprovecha un 20% de descuento en todos los kits de laboratorio.</p>
       </div>
       <div class="slide">
-        <img src="${pageContext.request.contextPath}/images/multiparametro.jpg" alt="Novedad 3">
+        <img src="${pageContext.request.contextPath}/images/multiparametro.webp" alt="Novedad 3">
         <h3>Recien Llegado</h3>
         <p>El medidor multiparametro o multiparametrico, mide parámetros fisicoquímicos del agua. Tiene múltiples aplicaciones,
              entre ellas el monitoreo de ríos, lagos, pantanos, así como también, plantas de tratamiento de aguas..</p>

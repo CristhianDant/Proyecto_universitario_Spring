@@ -20,7 +20,7 @@
 
 <jsp:include page="estructura/header.jsp" />
 
-<main class="flex-grow-1 d-flex align-items-center" style="background-image: url('${pageContext.request.contextPath}/img/background-pattern.jpg');background-repeat: no-repeat;background-size: cover;">
+<main class="flex-grow-1 d-flex align-items-center" style="background-image: url('${pageContext.request.contextPath}/img/background-pattern.webp');background-repeat: no-repeat;background-size: cover;">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-20 col-lg-12">

@@ -10,7 +10,7 @@
 
 <header class="encabezado">
   <div class="logo-container">
-    <img src="${pageContext.request.contextPath}/img/logo biog.png" alt="FoodMart Logo" class="logo">
+    <img src="${pageContext.request.contextPath}/img/logo biog.webp" alt="FoodMart Logo" class="logo">
         <h1> </h1>
 
   </div>

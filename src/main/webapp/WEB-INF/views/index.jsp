@@ -82,7 +82,7 @@
 
 
     
-    <section class="py-3" style="background-image: url('img/background-pattern.jpg');background-repeat: no-repeat;background-size: cover;">
+    <section class="py-3" style="background-image: url('img/background-pattern.webp');background-repeat: no-repeat;background-size: cover;">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -103,7 +103,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1 px-4 py-3 mt-3">Comprar Ahora</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/img/gm1363-500g.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/gm1363-500g.webp" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -117,7 +117,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Ver Modelos</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/img/dlab-dpette-micropipeta-electronica.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/dlab-dpette-micropipeta-electronica.webp" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -131,7 +131,7 @@
                           <a href="#" class="btn btn-outline-dark btn-lg text-uppercase fs-6 rounded-1">Ver Modelos</a>
                         </div>
                         <div class="img-wrapper col-md-5">
-                          <img src="${pageContext.request.contextPath}/img/gradilla-50ml.png" class="img-fluid">
+                          <img src="${pageContext.request.contextPath}/img/gradilla-50ml.webp" class="img-fluid">
                         </div>
                       </div>
                     </div>
@@ -142,7 +142,7 @@
                 </div>
               </div>
               
-              <div class="banner-ad bg-success-subtle block-2" style="background:url('img/medios-10%dscto.png') no-repeat;background-position: right bottom">
+              <div class="banner-ad bg-success-subtle block-2" style="background:url('img/medios-10%dscto.webp') no-repeat;background-position: right bottom">
                 <div class="row banner-content p-5">
 
                   <div class="content-wrapper col-md-7">
@@ -154,7 +154,7 @@
                 </div>
               </div>
 
-              <div class="banner-ad bg-danger block-3" style="background:url('img/microscopio-5%dscto.png') no-repeat;background-position: right bottom">
+              <div class="banner-ad bg-danger block-3" style="background:url('img/microscopio-5%dscto.webp') no-repeat;background-position: right bottom">
                 <div class="row banner-content p-5">
 
                   <div class="content-wrapper col-md-7">
@@ -255,7 +255,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/asa de siembra.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/asa de siembra.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Asa de Siembra</h3>
@@ -288,7 +288,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/rack.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/rack.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Rack para crioviales</h3>
@@ -320,7 +320,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/CRIOVIALES-AUTO-SOSTENIBLES-GRADUADOS-DE-2-mL.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/CRIOVIALES-AUTO-SOSTENIBLES-GRADUADOS-DE-2-mL.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Crioviales</h3>
@@ -352,7 +352,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/estufa.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/estufa.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Estufa de Laboratorio</h3>
@@ -384,7 +384,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/tubo.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tubo.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tubo de ensayo</h3>
@@ -416,7 +416,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/macconkey-agar.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/macconkey-agar.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Agar Mac conkey</h3>
@@ -448,7 +448,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/tamiz-de-laboratorio.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tamiz-de-laboratorio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tamiz de 5 pulgadas</h3>
@@ -480,7 +480,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/escurridor-de-laboratorio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/escurridor-de-laboratorio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Escurridor de Laboratorio</h3>
@@ -512,7 +512,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/carboy-de-laboratorio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/carboy-de-laboratorio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Carboy de 20 LT</h3>
@@ -544,7 +544,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/matraz-de-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/matraz-de-vidrio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Matraz de vidrio de 500 ml</h3>
@@ -586,7 +586,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/embudo-de-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/embudo-de-vidrio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Embudo de vidrio de 100mm</h3>
@@ -619,7 +619,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/rack-microtubos.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/rack-microtubos.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Rack para microtubos de 1.5ml</h3>
@@ -652,7 +652,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/tubos-criogenicos.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/tubos-criogenicos.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Tubos de Microcentrifuga 1.5ml</h3>
@@ -684,7 +684,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/pera-decantacion.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/pera-decantacion.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Pera de decantación de 100ml</h3>
@@ -716,7 +716,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/frasco-vidrio.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/frasco-vidrio.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Frasco de vidrio de 100ml</h3>
@@ -748,7 +748,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/frasco-ambar.jpg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/frasco-ambar.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Frasco de vidrio ambar 100ml</h3>
@@ -789,7 +789,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/estufa_agitador.jpeg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/estufa_agitador.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Agitador Magnetico + Calentador LCD de 20L</h3>
@@ -821,7 +821,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/microscopi_binocular.jpeg"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/microscopi_binocular.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Microscopios Binocular LED</h3>
@@ -853,7 +853,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/regfrigerador.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/regfrigerador.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Refrigeradora de 2A -8C</h3>
@@ -885,7 +885,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/centrifuga.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/centrifuga.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Centrifuga Clinica Multiuso con Rotor para Tubos</h3>
@@ -917,7 +917,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/Cabina bioseguridad.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/Cabina bioseguridad.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Cabina de Bioseguridad Clase 2</h3>
@@ -949,7 +949,7 @@
                         <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                         <figure>
                           <a href="/" title="Product Title">
-                            <img src="${pageContext.request.contextPath}/img/BALANZA-ANALITICA-DE-220.png"  class="tab-image">
+                            <img src="${pageContext.request.contextPath}/img/BALANZA-ANALITICA-DE-220.webp"  class="tab-image">
                           </a>
                         </figure>
                         <h3>Balanza Analitica de 220 gr</h3>
@@ -992,7 +992,7 @@
     <section class="py-5">
       <div class="container-fluid">
 
-        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('img/bg-leaves-img-pattern.png') no-repeat;">
+        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('img/bg-leaves-img-pattern.webp') no-repeat;">
           <div class="container my-5">
             <div class="row">
               <div class="col-md-6 p-5">
@@ -1064,7 +1064,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/microscopio.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/microscopio.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Microscopio Binocular</h3>
@@ -1095,7 +1095,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/balanza.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/balanza.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Balanza Analitica</h3>
@@ -1126,7 +1126,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/centrifuga.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/centrifuga.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Centrífuga de Laboratorio</h3>
@@ -1157,7 +1157,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/cabina.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/cabina.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Cabina de Flujo Laminar</h3>
@@ -1186,7 +1186,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/vasos.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/vasos.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Vasos precepitados</h3>
@@ -1216,7 +1216,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/calorimetro.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/calorimetro.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>calorimetro de combustión</h3>
@@ -1246,7 +1246,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/agitador.tamices.png"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/agitador.tamices.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Agitador de Tamices</h3>
@@ -1276,7 +1276,7 @@
                   <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
                   <figure>
                     <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/viscosimetro.1.jpg"  class="tab-image">
+                      <img src="${pageContext.request.contextPath}/img/viscosimetro.1.webp"  class="tab-image">
                     </a>
                   </figure>
                   <h3>Viscosimetro</h3>
@@ -1317,7 +1317,7 @@
 
           <div class="col-lg-3 col-md-6 col-sm-6">
             <div class="footer-menu">
-              <img src="${pageContext.request.contextPath}/img/logoBio.jpg" alt="logo">
+              <img src="${pageContext.request.contextPath}/img/logoBio.webp" alt="logo">
               <div class="social-links mt-5">
                 <ul class="d-flex list-unstyled gap-2">
                   <li>

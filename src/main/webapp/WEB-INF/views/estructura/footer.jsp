@@ -4,7 +4,7 @@
 
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer-menu">
-                    <img src="${pageContext.request.contextPath}/img/logo.png" alt="logo" class="img-fluid">
+                    <img src="${pageContext.request.contextPath}/img/logo.webp" alt="logo" class="img-fluid">
                     <div class="social-links mt-4">
                         <ul class="d-flex list-unstyled">
                             <li>

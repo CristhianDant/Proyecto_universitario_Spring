@@ -10,7 +10,7 @@
 
   <header>
     <div class="logo-container">
-    <img src="${pageContext.request.contextPath}/img/logo biog.png" alt="FoodMart Logo" class="logo">
+    <img src="${pageContext.request.contextPath}/img/logo biog.webp" alt="FoodMart Logo" class="logo">
     <h1> </h1>
   </div>
     <nav>
@@ -53,7 +53,7 @@
           <article class="post-item card border-0 shadow-sm p-3">
             <div class="image-holder zoom-effect">
               <a href="#">
-                <img src="${pageContext.request.contextPath}/images/gaza.1.png" alt="Gaza noticia" class="card-img-top">
+                <img src="${pageContext.request.contextPath}/images/gaza.1.webp" alt="Gaza noticia" class="card-img-top">
               </a>
             </div>
             <div class="card-body">
@@ -86,7 +86,7 @@
           <article class="post-item card border-0 shadow-sm p-3">
             <div class="image-holder zoom-effect">
               <a href="#">
-                <img src="${pageContext.request.contextPath}/images/alumna.unmsm.png" alt="Astronauta peruana" class="card-img-top">
+                <img src="${pageContext.request.contextPath}/images/alumna.unmsm.webp" alt="Astronauta peruana" class="card-img-top">
               </a>
             </div>
             <div class="card-body">
@@ -119,7 +119,7 @@
           <article class="post-item card border-0 shadow-sm p-3">
             <div class="image-holder zoom-effect">
               <a href="#">
-                <img src="${pageContext.request.contextPath}/images/medifarma.png" alt="Medifarma" class="card-img-top">
+                <img src="${pageContext.request.contextPath}/images/medifarma.webp" alt="Medifarma" class="card-img-top">
               </a>
             </div>
             <div class="card-body">
