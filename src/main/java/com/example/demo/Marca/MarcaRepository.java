@@ -20,7 +20,8 @@ public class MarcaRepository implements MarcaDAO {
                 rs.getString("nombre_marca"),
                 rs.getString("procedencia"),
                 rs.getBoolean("anulado"),
-                rs.getString("link_imaguen")
+                rs.getString("link_imaguen"),
+                rs.getString("descripcion")
         );
     };
 
@@ -32,7 +33,8 @@ public class MarcaRepository implements MarcaDAO {
                 nombre_marca,
                 procedencia,
                 anulado,
-                link_imaguen
+                link_imaguen,
+                descripcion
             FROM marcas
             ORDER BY nombre_marca
             """;
@@ -47,7 +49,8 @@ public class MarcaRepository implements MarcaDAO {
                 nombre_marca,
                 procedencia,
                 anulado,
-                link_imaguen
+                link_imaguen,
+                descripcion
             FROM marcas
             WHERE anulado = false
             ORDER BY nombre_marca
@@ -63,7 +66,8 @@ public class MarcaRepository implements MarcaDAO {
                 nombre_marca,
                 procedencia,
                 anulado,
-                link_imaguen
+                link_imaguen,
+                descripcion
             FROM marcas
             WHERE id_marca = ?
             """;
@@ -74,21 +78,22 @@ public class MarcaRepository implements MarcaDAO {
     @Override
     public int crearMarca(Marca marca) {
         String query = """
-            INSERT INTO marcas (nombre_marca, procedencia, anulado, link_imaguen)
-            VALUES (?, ?, ?, ?)
+            INSERT INTO marcas (nombre_marca, procedencia, anulado, link_imaguen, descripcion)
+            VALUES (?, ?, ?, ?, ?)
             """;
         return jdbcTemplate.update(query,
                 marca.getNombreMarca(),
                 marca.getProcedencia(),
                 marca.isAnulado(),
-                marca.getLink_imaguen());
+                marca.getLink_imaguen(),
+                marca.getDescripcion());
     }
 
     @Override
     public int actualizarMarca(Marca marca) {
         String query = """
             UPDATE marcas
-            SET nombre_marca = ?, procedencia = ?, anulado = ?, link_imaguen = ?
+            SET nombre_marca = ?, procedencia = ?, anulado = ?, link_imaguen = ?, descripcion = ?
             WHERE id_marca = ?
             """;
         return jdbcTemplate.update(query,
@@ -96,6 +101,7 @@ public class MarcaRepository implements MarcaDAO {
                 marca.getProcedencia(),
                 marca.isAnulado(),
                 marca.getLink_imaguen(),
+                marca.getDescripcion(),
                 marca.getIdMarca());
     }
 

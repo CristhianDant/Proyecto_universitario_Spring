@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS marcas (
   nombre_marca VARCHAR(100) UNIQUE NOT NULL,
   procedencia VARCHAR(200),
   anulado BOOLEAN NOT NULL DEFAULT FALSE,
-  link_imaguen VARCHAR(200)
+  link_imaguen VARCHAR(200),
+  descripcion VARCHAR(255)
 );
 
 CREATE TABLE IF NOT EXISTS productos (

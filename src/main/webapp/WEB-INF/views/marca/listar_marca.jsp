@@ -17,22 +17,8 @@
         <main class="container-fluid py-4">
             <h1 class="text-center mb-4">Gestión de Marcas</h1>
 
-            <!-- Formulario para crear nueva marca -->
-            <div class="card">
-                <div class="card-header">Nueva Marca</div>
-                <div class="card-body">
-                    <form action="${pageContext.request.contextPath}/marcas/guardar" method="post">
-                        <div class="mb-3">
-                            <label for="nombreMarca" class="form-label">Nombre de la Marca</label>
-                            <input type="text" class="form-control" id="nombreMarca" name="nombreMarca" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="procedencia" class="form-label">Procedencia</label>
-                            <input type="text" class="form-control" id="procedencia" name="procedencia" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Crear Marca</button>
-                    </form>
-                </div>
+            <div class="mb-3">
+                <a href="${pageContext.request.contextPath}/marcas/crear" class="btn btn-primary">Crear Nueva Marca</a>
             </div>
 
             <!-- Listado de marcas -->
