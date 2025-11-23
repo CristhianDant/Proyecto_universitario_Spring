@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -179,89 +180,7 @@
           <div class="col-md-12">
 
             <div class="section-header d-flex flex-wrap justify-content-between mb-5">
-              <h2 class="section-title">Categorias</h2>
 
-              <div class="d-flex align-items-center">
-                <a href="#" class="btn-link text-decoration-none">Ver Todas las Categorias →</a>
-                <div class="swiper-buttons">
-                  <button class="swiper-prev category-carousel-prev btn btn-yellow">❮</button>
-                  <button class="swiper-next category-carousel-next btn btn-yellow">❯</button>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="category-carousel swiper">
-              <div class="swiper-wrapper">
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/microscope.png" width="40" height="40" alt="Category Thumbnail">
-                  <h3 class="category-title">Equipos de laboratorio</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/test.png" width="40" height="40" alt="Category Thumbnail">
-                  <h3 class="category-title">Reactivos Quimicos</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/blood-test.png" width="40" height="40" alt="Category Thumbnail">
-                  <h3 class="category-title">Medios de Cultivo</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/enzyme.png" width="40" height="40" alt="Category Thumbnail">
-                  <h3 class="category-title">Colorante de Laboratorio</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/material-de-laboratorio.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Material de Laboratorio</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/kits-de-extraccion.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Kits de extracción</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/fragancia.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Fragancias</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/reactivos-usp.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Reactivos USP</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/alcoholes.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Alcoholes</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/biologia-molecular.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Biologia Molecular</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/cultvo-celular.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Cultivo Celular</h3>
-                </a>
-                <a href="/" class="nav-link category-item swiper-slide">
-                  <img src="${pageContext.request.contextPath}/img/cultivo-vegetal.png" alt="Category Thumbnail">
-                  <h3 class="category-title">Cultivo Vegetal</h3>
-                </a>
-                
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="py-5 overflow-hidden">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="section-header d-flex flex-wrap flex-wrap justify-content-between mb-5">
-              
               <h2 class="section-title">Marcas Recién llegadas</h2>
 
               <div class="d-flex align-items-center">
@@ -281,97 +200,24 @@
             <div class="brand-carousel swiper">
               <div class="swiper-wrapper">
                 
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/radwag-logo.png" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Radwag</p>
-                          <h5 class="card-title">El mayor fabricante de balanzas del mundo</h5>
+                <c:forEach var="marca" items="${marcasActivas}">
+                  <div class="swiper-slide">
+                    <div class="card mb-3 p-3 rounded-4 shadow border-0">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="${pageContext.request.contextPath}${marca.link_imaguen}" class="img-fluid rounded" alt="${marca.nombreMarca}">
+                        </div>
+                        <div class="col-md-8">
+                          <div class="card-body py-0">
+                            <p class="text-muted mb-0">${marca.nombreMarca}</p>
+                            <h5 class="card-title">${marca.descripcion}</h5>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/Merck-logo.png" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Merck Millipore</p>
-                          <h5 class="card-title">La marca más importante de latinoamérica en reactivos</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/Himedia-logo.jpg" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Himedia Laboratories</p>
-                          <h5 class="card-title">El representante Hindú con más ventas de medios en el mundo</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/isolab-logo.png" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Isolab</p>
-                          <h5 class="card-title">El gigante alemán se suma a nuestro catálogo de marcas</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/tarsons-logo.jpg" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Tarsons</p>
-                          <h5 class="card-title">Una de las marcas top de la India en material de plásticos</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="card mb-3 p-3 rounded-4 shadow border-0">
-                    <div class="row g-0">
-                      <div class="col-md-4">
-                        <img src="${pageContext.request.contextPath}/img/biobase-logo.jpg" class="img-fluid rounded" alt="Card title">
-                      </div>
-                      <div class="col-md-8">
-                        <div class="card-body py-0">
-                          <p class="text-muted mb-0">Biobase</p>
-                          <h5 class="card-title">Uno de los fabricantes más grandes de China en equipo médico</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
+                </c:forEach>
+
               </div>
             </div>
 
@@ -1145,36 +991,45 @@
 
     <section class="py-5">
       <div class="container-fluid">
-        <div class="row">
-          
-          <div class="col-md-6">
-            <div class="banner-ad bg-danger mb-3" style="background: url('img/materiales-de-laboratorio666.webp');background-repeat: no-repeat;background-position: right bottom;">
-              <div class="banner-content p-5">
 
-                <div class="categories text-primary fs-3 fw-bold">hasta 25% de dscto</div>
-                <h3 class="banner-title">Materiales de vidrio</h3>
-                <p>Matraz, tubo de ensayo, pipeta y mas...</p>
-                <a href="#" class="btn btn-dark text-uppercase">Ver ahora</a>
+        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('img/bg-leaves-img-pattern.png') no-repeat;">
+          <div class="container my-5">
+            <div class="row">
+              <div class="col-md-6 p-5">
+                <div class="section-header">
+                  <h2 class="section-title display-4">Obten <span class="text-primary">10% Descuento</span> en tu primera compra</h2>
+                </div>
+                <p> Equipa tu laboratorio con los mejores implementos al mejor precio.
+                  Beakers, tubos de ensayo, microscopios, guantes, instrumentos de medición y mucho más.</p>
+              </div>
+              <div class="col-md-6 p-5">
+                <form>
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text"
+                      class="form-control form-control-lg" name="name" id="name" placeholder="Name">
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label">Email</label>
+                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="abc@mail.com">
+                  </div>
+                  <div class="form-check form-check-inline mb-3">
+                    <label class="form-check-label" for="subscribe">
+                    <input class="form-check-input" type="checkbox" id="subscribe" value="subscribe">
+                    Subscribete para mas información</label>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
+                  </div>
+                </form>
 
               </div>
-            
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="banner-ad bg-info" style="background: url('img/EQP.webp') no-repeat;background-position: right bottom;">
-              <div class="banner-content p-5">
 
-                <div class="categories text-primary fs-3 fw-bold">Hasta 20% de descuento</div>
-                <h3 class="banner-title">Equipos de Medición</h3>
-                <p>Aprovecha esta promoción en balanzas, termómetros digitales, pH-metros y más.</p>
-                <a href="#" class="btn btn-dark text-uppercase">Ver ahora</a>
-
-              </div>
-            
             </div>
+
           </div>
-             
         </div>
+
       </div>
     </section>
 
@@ -1183,12 +1038,12 @@
         <div class="row">
           <div class="col-md-12">
 
-            <div class="section-header d-flex flex-wrap justify-content-between my-5">
-              
-              <h2 class="section-title">Productos mas vendidos</h2>
+            <div class="section-header d-flex justify-content-between">
+
+              <h2 class="section-title">Productos mas populares</h2>
 
               <div class="d-flex align-items-center">
-                <a href="#" class="btn-link text-decoration-none">View All Categories →</a>
+                <a href="#" class="btn-link text-decoration-none">Ver todas las Categorias →</a>
                 <div class="swiper-buttons">
                   <button class="swiper-prev products-carousel-prev btn btn-primary">❮</button>
                   <button class="swiper-next products-carousel-next btn btn-primary">❯</button>
@@ -1446,325 +1301,7 @@
                             </button>
                   </div>
                 </div>
-                
-              </div>
-            </div>
-            <!-- / products-carousel -->
 
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="py-5">
-      <div class="container-fluid">
-
-        <div class="bg-secondary py-5 my-5 rounded-5" style="background: url('img/bg-leaves-img-pattern.png') no-repeat;">
-          <div class="container my-5">
-            <div class="row">
-              <div class="col-md-6 p-5">
-                <div class="section-header">
-                  <h2 class="section-title display-4">Obten <span class="text-primary">10% Descuento</span> en tu primera compra</h2>
-                </div>
-                <p> Equipa tu laboratorio con los mejores implementos al mejor precio.
-                  Beakers, tubos de ensayo, microscopios, guantes, instrumentos de medición y mucho más.</p>
-              </div>
-              <div class="col-md-6 p-5">
-                <form>
-                  <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text"
-                      class="form-control form-control-lg" name="name" id="name" placeholder="Name">
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label">Email</label>
-                    <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="abc@mail.com">
-                  </div>
-                  <div class="form-check form-check-inline mb-3">
-                    <label class="form-check-label" for="subscribe">
-                    <input class="form-check-input" type="checkbox" id="subscribe" value="subscribe">
-                    Subscribete para mas información</label>
-                  </div>
-                  <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-dark btn-lg">Enviar</button>
-                  </div>
-                </form>
-                
-              </div>
-              
-            </div>
-            
-          </div>
-        </div>
-        
-      </div>
-    </section>
-
-    <section class="py-5 overflow-hidden">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="section-header d-flex justify-content-between">
-              
-              <h2 class="section-title">Productos mas populares</h2>
-
-              <div class="d-flex align-items-center">
-                <a href="#" class="btn-link text-decoration-none">Ver todas las Categorias →</a>
-                <div class="swiper-buttons">
-                  <button class="swiper-prev products-carousel-prev btn btn-primary">❮</button>
-                  <button class="swiper-next products-carousel-next btn btn-primary">❯</button>
-                </div>  
-              </div>
-            </div>
-            
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-
-            <div class="products-carousel swiper">
-              <div class="swiper-wrapper">
-                
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/tubo.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Tubo de ensayo</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/2.50</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/matraz-de-vidrio.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Matraz de vidrio 500 ml</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/22.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/embudo-de-vidrio.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Embudo de vidrio</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/32.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/pipeta.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>pipeta</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/15.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/bureta.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>bureta</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/630.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/balon.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Balon de destilacion</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/100.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/placa de petri.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Placa de petri</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/50.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-
-                <div class="product-item swiper-slide">
-                  <a href="#" class="btn-wishlist"><svg width="24" height="24"><use xlink:href="#heart"></use></svg></a>
-                  <figure>
-                    <a href="/" title="Product Title">
-                      <img src="${pageContext.request.contextPath}/img/rack-microtubos.jpg"  class="tab-image">
-                    </a>
-                  </figure>
-                  <h3>Rack para crioviales</h3>
-                  <span class="qty">1 Unit</span><span class="rating"><svg width="24" height="24" class="text-primary"><use xlink:href="#star-solid"></use></svg> 4.5</span>
-                  <span class="price">s/200.00</span>
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="input-group product-qty">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus">
-                              <svg width="16" height="16"><use xlink:href="#minus"></use></svg>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1">
-                        <span class="input-group-btn">
-                            <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus">
-                                <svg width="16" height="16"><use xlink:href="#plus"></use></svg>
-                            </button>
-                        </span>
-                    </div>
-                            <button class="btn btn-primary btn-add-to-cart">
-                             Añadir <iconify-icon icon="uil:shopping-cart"></iconify-icon>
-                            </button>
-                  </div>
-                </div>
-                
               </div>
             </div>
             <!-- / products-carousel -->
@@ -1790,17 +1327,12 @@
                   </li>
                   <li>
                     <a href="#" class="btn btn-outline-light">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-6.22-1.27a1 1 0 0 0-1.14 0a8 8 0 0 1-6.22 1.27a1 1 0 0 0-.84.2a1 1 0 0 0-.37.78v7.45a9 9 0 0 0 3.77 7.33l3.65 2.6a1 1 0 0 0 1.16 0l3.65-2.6A9 9 0 0 0 20 11.88V4.43a1 1 0 0 0-.37-.78ZM18 11.88a7 7 0 0 1-2.93 5.7L12 19.77l-3.07-2.19A7 7 0 0 1 6 11.88v-6.3a10 10 0 0 0 6-1.39a10 10 0 0 0 6 1.39Zm-4.46-2.29l-2.69 2.7l-.89-.9a1 1 0 0 0-1.42 1.42l1.6 1.6a1 1 0 0 0 1.42 0L15 11a1 1 0 0 0-1.42-1.42Z"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M22.991 3.95a1 1 0 0 0-1.51-.86a7.48 7.48 0 0 1-6.22-1.27a1 1 0 0 0-1.14 0a8 8 0 0 1-6.22 1.27a1 1 0 0 0-.84.2a1 1 0 0 0-.37.78v7.45a9 9 0 0 0 3.77 7.33l3.65 2.6a1 1 0 0 0 1.16 0l3.65-2.6A9 9  0 0 0 20 11.88V4.43a1 1 0 0 0-.37-.78ZM18 11.88a7 7 0 0 1-2.93 5.7L12 19.77l-3.07-2.19A7 7 0 0 1 6 11.88v-6.3a10 10 0 0 0 6-1.39a10 10 0 0 0 6 1.39Zm-4.46-2.29l-2.69 2.7l-.89-.9a1 1 0 0 0-1.42 1.42l1.6 1.6a1 1 0 0 0 1.42 0L15 11a1 1 0 0 0-1.42-1.42Z"/></svg>
                     </a>
                   </li>
                   <li>
                     <a href="#" class="btn btn-outline-light">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M23 9.71a8.5 8.5 0 0 0-.91-4.13a2.92 2.92 0 0 0-1.72-1A78.36 78.36 0 0 0 12 4.27a78.45 78.45 0 0 0-8.34.3a2.87 2.87 0 0 0-1.46.74c-.9.83-1 2.25-1.1 3.45a48.29 48.29 0 0 0 0 6.48a9.55 9.55 0 0 0 .3 2a3.14 3.14 0 0 0 .71 1.36a2.86 2.86 0 0 0 1.49.78a45.18 45.18 0 0 0 6.5.33c3.5.05 6.57 0 10.2-.28a2.88 2.88 0 0 0 1.53-.78a2.49 2.49 0 0 0 .61-1a10.58 10.58 0 0 0 .52-3.4c.04-.56.04-3.94.04-4.54ZM9.74 14.85V8.66l5.92 3.11c-1.66.92-3.85 1.96-5.92 3.08Z"/></svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="btn btn-outline-light">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M17.34 5.46a1.2 1.2 0 1 0 1.2 1.2a1.2 1.2 0 0 0-1.2-1.2Zm4.6 2.42a7.59 7.59 0 0 0-.46-2.43a4.94 4.94 0 0 0-1.16-1.77a4.7 4.7 0 0 0-1.77-1.15a7.3 7.3 0 0 0-2.43-.47C15.06 2 14.72 2 12 2s-3.06 0-4.12.06a7.3 7.3 0 0 0-2.43.47a4.78 4.78 0 0 0-1.77 1.15a4.7 4.7 0 0 0-1.15 1.77a7.3 7.3 0 0 0-.47 2.43C2 8.94 2 9.28 2 12s0 3.06.06 4.12a7.3 7.3 0 0 0 .47 2.43a4.7 4.7 0 0 0 1.15 1.77a4.78 4.78 0 0 0 1.77 1.15a7.3 7.3 0 0 0 2.43.47C8.94 22 9.28 22 12 22s3.06 0 4.12-.06a7.3 7.3 0 0 0 2.43-.47a4.7 4.7 0 0 0 1.77-1.15a4.85 4.85 0 0 0 1.16-1.77a7.59 7.59 0 0 0 .46-2.43c0-1.06.06-1.4.06-4.12s0-3.06-.06-4.12a7.3 7.3 0 0 0-.35-1.9A3 3 0 0 0 20.5 4H6.8l-.33-1.26A1 1 0 0 0 5.5 2h-2v2h1.23l2.48 9.26a1 1 0 0 0 1 .74H18.5a1 1 0 0 1 0 2h-13a1 1 0 0 0 0 2h1.18a3 3 0 1 0 5.64 0h2.36a3 3 0 1 0 5.82 1a2.94 2.94 0 0 0-.4-1.47A3 3 0 0 0 21.5 15Zm-3.91-3H9L7.34 6H19.2ZM9.5 20a1 1 0 1 1 1-1a1 1 0 0 1-1 1Zm8 0a1 1 0 1 1 1-1a1 1 0 0 1-1 1Z"/></svg>
                     </a>
                   </li>
                 </ul>
