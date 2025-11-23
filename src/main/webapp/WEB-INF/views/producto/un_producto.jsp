@@ -61,5 +61,6 @@
             </div>
         </div>
     </main>
+    <jsp:include page="../estructura/scripts_estructura.jsp" />
 </body>
 </html>

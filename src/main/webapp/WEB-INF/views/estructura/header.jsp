@@ -147,15 +147,10 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="LineaProductos"
                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Línea de Productos
+                                        Nuestros Proveedores
                                     </a>
-                                    <ul class="dropdown-menu" aria-labelledby="LineaProductos">
-                                        <li><a href="equipos.html" class="dropdown-item">🔬 Equipos de Laboratorio</a></li>
-                                        <li><a href="colorantes.html" class="dropdown-item">🎨 Colorantes de Laboratorio</a></li>
-                                        <li><a href="kits.html" class="dropdown-item">📦 Kits de Laboratorio</a></li>
-                                        <li><a href="medios.html" class="dropdown-item">🧪 Medios de Cultivo</a></li>
-                                        <li><a href="reactivos.html" class="dropdown-item">⚗️ Reactivos de Laboratorio</a></li>
-                                        <li><a href="suplementos.html" class="dropdown-item">💊 Suplementos de Laboratorio</a></li>
+                                    <ul class="dropdown-menu" id="proveedores-dropdown" aria-labelledby="LineaProductos">
+                                        <!-- Marcas se cargarán aquí dinámicamente -->
                                     </ul>
                                 </li>
 
@@ -186,3 +181,5 @@
         </div>
     </div>
 </header>
+
+<script src="${pageContext.request.contextPath}/js/header/header.js"></script>

@@ -73,5 +73,6 @@
           </div>
         </main>
     </div>
+    <jsp:include page="../estructura/scripts_estructura.jsp" />
   </body>
 </html>
