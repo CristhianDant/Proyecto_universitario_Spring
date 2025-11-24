@@ -1,7 +1,6 @@
 package com.example.demo.DocuemtoVenta.models;
 
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class DocumentoVenta {
@@ -13,8 +12,7 @@ public class DocumentoVenta {
     private String referencia;
     private BigDecimal total;
     private Timestamp fechaCreacion;
-    private Date fechaVencimiento;
-    private Date fechaEntrega;
+    private String estado;
     private int idUser;
 
     // Constructor vacío
@@ -23,7 +21,7 @@ public class DocumentoVenta {
     // Constructor completo
     public DocumentoVenta(int idDocumento, String razonSocial, String nroSerie, String nroDocumento,
                          String direccionEntrega, String referencia, BigDecimal total,
-                         Timestamp fechaCreacion, Date fechaVencimiento, Date fechaEntrega, int idUser) {
+                         Timestamp fechaCreacion, String estado, int idUser) {
         this.idDocumento = idDocumento;
         this.razonSocial = razonSocial;
         this.nroSerie = nroSerie;
@@ -32,8 +30,7 @@ public class DocumentoVenta {
         this.referencia = referencia;
         this.total = total;
         this.fechaCreacion = fechaCreacion;
-        this.fechaVencimiento = fechaVencimiento;
-        this.fechaEntrega = fechaEntrega;
+        this.estado = estado;
         this.idUser = idUser;
     }
 
@@ -102,20 +99,12 @@ public class DocumentoVenta {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaVencimiento() {
-        return fechaVencimiento;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setFechaVencimiento(Date fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
-    }
-
-    public Date getFechaEntrega() {
-        return fechaEntrega;
-    }
-
-    public void setFechaEntrega(Date fechaEntrega) {
-        this.fechaEntrega = fechaEntrega;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public int getIdUser() {

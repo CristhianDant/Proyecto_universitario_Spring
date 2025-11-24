@@ -8,9 +8,7 @@ import org.springframework.jdbc.support.KeyHolder;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
-import java.util.Map;
 
 import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
 import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
@@ -36,8 +34,7 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
         documento.setReferencia(rs.getString("referencia"));
         documento.setTotal(rs.getBigDecimal("total"));
         documento.setFechaCreacion(rs.getTimestamp("fecha_creacion"));
-        documento.setFechaVencimiento(rs.getDate("fecha_vencimiento"));
-        documento.setFechaEntrega(rs.getDate("fecha_entrega"));
+        documento.setEstado(rs.getString("estado"));
         documento.setIdUser(rs.getInt("id_user"));
         return documento;
     };
@@ -79,11 +76,11 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         String sqlDocumento = "INSERT INTO documento_venta (razon_social, nro_serie, nro_documento, " +
-                           "direccion_entrega, referencia, total, fecha_creacion, fecha_vencimiento, fecha_entrega, id_user) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                           "direccion_entrega, referencia, total, fecha_creacion, estado, id_user) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         jdbcTemplate.update(connection -> {
-            PreparedStatement ps = connection.prepareStatement(sqlDocumento, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement(sqlDocumento, new String[]{"ID_DOCUMENTO"});
             ps.setString(1, documento.getRazonSocial());
             ps.setString(2, documento.getNroSerie());
             ps.setString(3, documento.getNroDocumento());
@@ -91,14 +88,12 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
             ps.setString(5, documento.getReferencia());
             ps.setBigDecimal(6, documento.getTotal());
             ps.setTimestamp(7, documento.getFechaCreacion());
-            ps.setDate(8, documento.getFechaVencimiento());
-            ps.setDate(9, documento.getFechaEntrega());
-            ps.setInt(10, documento.getIdUser());
+            ps.setString(8, documento.getEstado());
+            ps.setInt(9, documento.getIdUser());
             return ps;
         }, keyHolder);
 
-        Map<String, Object> keys = keyHolder.getKeys();
-        int idDocumentoGenerado = keys != null && keys.containsKey("ID_DOCUMENTO") ? ((Number) keys.get("ID_DOCUMENTO")).intValue() : 0;
+        int idDocumentoGenerado = keyHolder.getKey().intValue();
 
         // Insertar detalles
         String sqlDetalle = "INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio_unitario, subtotal) " +

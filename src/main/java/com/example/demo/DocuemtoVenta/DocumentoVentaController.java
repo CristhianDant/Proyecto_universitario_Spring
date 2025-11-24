@@ -3,6 +3,7 @@ package com.example.demo.DocuemtoVenta;
 import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
 import com.example.demo.DocuemtoVenta.models.DetalleForm;
 import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVentaCompleto;
 import com.example.demo.DocuemtoVenta.models.DocumentoVentaForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -92,8 +93,7 @@ public class DocumentoVentaController {
             documento.setReferencia(form.getReferencia());
             documento.setTotal(total);
             documento.setFechaCreacion(new java.sql.Timestamp(System.currentTimeMillis()));
-            documento.setFechaVencimiento(Date.valueOf(LocalDate.now().plusDays(30)));
-            documento.setFechaEntrega(Date.valueOf(LocalDate.now().plusDays(7)));
+            documento.setEstado("PENDIENTE");
             documento.setIdUser(1);
 
             int idDocumento = documentoVentaService.crearDocumentoVenta(documento, detalleList);
@@ -104,5 +104,13 @@ public class DocumentoVentaController {
             redirectAttributes.addFlashAttribute("error", "Error al guardar el documento: " + e.getMessage());
             return "redirect:/venta/compra";
         }
+    }
+
+    @RequestMapping("/ver-documento")
+    public String verDocumento(@RequestParam int id, Model model) {
+        DocumentoVentaCompleto documentoCompleto = documentoVentaService.obtenerDocumentoConDetalle(id);
+        model.addAttribute("documento", documentoCompleto.getDocumento());
+        model.addAttribute("detalles", documentoCompleto.getDetalles());
+        return "documento_de_venta/ver_documento";
     }
 }

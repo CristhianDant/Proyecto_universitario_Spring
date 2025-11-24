@@ -64,8 +64,7 @@ CREATE TABLE IF NOT EXISTS documento_venta (
   referencia VARCHAR(255),
   total DECIMAL(10,2) NOT NULL,
   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
-  fecha_vencimiento DATE,
-  fecha_entrega DATE,
+  estado VARCHAR(30) NOT NULL, --('PENDIENTE', 'COMPLETADO', 'ANULADO')
   id_user INT
 );
 
