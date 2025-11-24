@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Generar filas para cada producto
-        carrito.forEach(producto => {
+        carrito.forEach((producto, index) => {
             const subtotal = producto.precio * producto.cantidad;
             total += subtotal;
 
@@ -34,6 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>S/ ${subtotal.toFixed(2)}</td>
             `;
             detalleVentaBody.appendChild(fila);
+        });
+
+        // Agregar hidden inputs para los detalles
+        const hiddenDetalles = document.getElementById("hidden-detalles");
+        hiddenDetalles.innerHTML = ""; // Limpiar
+        carrito.forEach((producto, index) => {
+            const idInput = document.createElement("input");
+            idInput.type = "hidden";
+            idInput.name = `detalles[${index}].idProducto`;
+            idInput.value = producto.idProducto;
+            hiddenDetalles.appendChild(idInput);
+
+            const cantidadInput = document.createElement("input");
+            cantidadInput.type = "hidden";
+            cantidadInput.name = `detalles[${index}].cantidad`;
+            cantidadInput.value = producto.cantidad;
+            hiddenDetalles.appendChild(cantidadInput);
+
+            const precioInput = document.createElement("input");
+            precioInput.type = "hidden";
+            precioInput.name = `detalles[${index}].precio`;
+            precioInput.value = producto.precio;
+            hiddenDetalles.appendChild(precioInput);
         });
 
         // Actualizar total

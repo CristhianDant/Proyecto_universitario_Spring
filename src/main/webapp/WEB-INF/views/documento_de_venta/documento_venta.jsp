@@ -13,6 +13,9 @@
 
 <jsp:include page="../estructura/header.jsp" />
 
+<c:if test="${not empty success}"><div class="alert alert-success">${success}</div></c:if>
+<c:if test="${not empty error}"><div class="alert alert-danger">${error}</div></c:if>
+
 <main class="container my-5">
     <div class="card venta-card">
         <div class="card-header text-center">
@@ -24,19 +27,21 @@
                 <div class="col-lg-7">
                     <fieldset class="border p-3 mb-4">
                         <legend class="w-auto px-2">Datos del Cliente</legend>
-                        <form id="cliente-form">
+                        <form id="cliente-form" action="${pageContext.request.contextPath}/venta/guardar-documento" method="post">
                             <div class="mb-3">
                                 <label for="razon_social" class="form-label">Razón Social</label>
-                                <input type="text" class="form-control" id="razon_social" name="razon_social" required>
+                                <input type="text" class="form-control" id="razon_social" name="razonSocial" required>
                             </div>
                             <div class="mb-3">
                                 <label for="direccion_entrega" class="form-label">Dirección de Entrega</label>
-                                <input type="text" class="form-control" id="direccion_entrega" name="direccion_entrega">
+                                <input type="text" class="form-control" id="direccion_entrega" name="direccionEntrega">
                             </div>
                             <div class="mb-3">
                                 <label for="referencia" class="form-label">Referencia</label>
                                 <input type="text" class="form-control" id="referencia" name="referencia">
                             </div>
+                            <!-- Hidden inputs for detalles will be added here by JS -->
+                            <div id="hidden-detalles"></div>
                         </form>
                     </fieldset>
                 </div>

@@ -2,14 +2,15 @@ package com.example.demo.DocuemtoVenta;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
-import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Map;
 
 import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
 import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
@@ -78,8 +79,8 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         String sqlDocumento = "INSERT INTO documento_venta (razon_social, nro_serie, nro_documento, " +
-                           "direccion_entrega, referencia, total, fecha_vencimiento, fecha_entrega, id_user) " +
-                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                           "direccion_entrega, referencia, total, fecha_creacion, fecha_vencimiento, fecha_entrega, id_user) " +
+                           "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sqlDocumento, Statement.RETURN_GENERATED_KEYS);
@@ -89,13 +90,15 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
             ps.setString(4, documento.getDireccionEntrega());
             ps.setString(5, documento.getReferencia());
             ps.setBigDecimal(6, documento.getTotal());
-            ps.setDate(7, documento.getFechaVencimiento());
-            ps.setDate(8, documento.getFechaEntrega());
-            ps.setInt(9, documento.getIdUser());
+            ps.setTimestamp(7, documento.getFechaCreacion());
+            ps.setDate(8, documento.getFechaVencimiento());
+            ps.setDate(9, documento.getFechaEntrega());
+            ps.setInt(10, documento.getIdUser());
             return ps;
         }, keyHolder);
 
-        int idDocumentoGenerado = keyHolder.getKey() != null ? keyHolder.getKey().intValue() : 0;
+        Map<String, Object> keys = keyHolder.getKeys();
+        int idDocumentoGenerado = keys != null && keys.containsKey("ID_DOCUMENTO") ? ((Number) keys.get("ID_DOCUMENTO")).intValue() : 0;
 
         // Insertar detalles
         String sqlDetalle = "INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio_unitario, subtotal) " +
@@ -124,7 +127,7 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
 
     @Override
     public String getUltimoNroDocumento(String serie) {
-        String sql = "SELECT nro_documento FROM documento_venta WHERE nro_serie = ? ORDER BY CAST(nro_documento AS UNSIGNED) DESC LIMIT 1";
+        String sql = "SELECT nro_documento FROM documento_venta WHERE nro_serie = ? ORDER BY CAST(nro_documento AS BIGINT) DESC LIMIT 1";
         try {
             return jdbcTemplate.queryForObject(sql, String.class, serie);
         } catch (Exception e) {
