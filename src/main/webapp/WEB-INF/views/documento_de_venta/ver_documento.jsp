@@ -18,9 +18,41 @@
         <a href="${pageContext.request.contextPath}/venta/gestion_ventas" class="btn btn-secondary">Volver</a>
     </div>
 
+    <!-- Mostrar mensajes de éxito o error -->
+    <c:if test="${not empty success}">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            ${success}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </c:if>
+    <c:if test="${not empty error}">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            ${error}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </c:if>
+
     <div class="card">
-        <div class="card-header">
+        <div class="card-header d-flex justify-content-between align-items-center">
             <h5>Información del Documento</h5>
+            <div>
+                <c:if test="${documento.estado == 'PENDIENTE'}">
+                    <form action="${pageContext.request.contextPath}/venta/completar-documento" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="${documento.idDocumento}">
+                        <button type="submit" class="btn btn-success btn-sm" onclick="return confirm('¿Está seguro de completar este documento?')">Completar</button>
+                    </form>
+                    <form action="${pageContext.request.contextPath}/venta/anular-documento" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="${documento.idDocumento}">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de anular este documento?')">Anular</button>
+                    </form>
+                </c:if>
+                <c:if test="${documento.estado == 'COMPLETADO'}">
+                    <form action="${pageContext.request.contextPath}/venta/anular-documento" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="${documento.idDocumento}">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de anular este documento?')">Anular</button>
+                    </form>
+                </c:if>
+            </div>
         </div>
         <div class="card-body">
             <div class="row">

@@ -20,6 +20,9 @@ public interface DocumentoVentaService {
     // Anular documento de venta
     int anularDocumentoVenta(int idDocumento);
 
+    // Completar documento de venta
+    int completarDocumentoVenta(int idDocumento);
+
     // Obtener el siguiente número de documento para una serie
     String getSiguienteNroDocumento(String serie);
 }

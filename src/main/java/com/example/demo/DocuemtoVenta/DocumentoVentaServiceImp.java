@@ -88,6 +88,17 @@ public class DocumentoVentaServiceImp implements DocumentoVentaService {
     }
 
     @Override
+    public int completarDocumentoVenta(int idDocumento) {
+        if (idDocumento <= 0) {
+            throw new IllegalArgumentException("El ID del documento debe ser mayor a 0");
+        }
+
+        DocumentoVentaCompleto documentoCompleto = obtenerDocumentoConDetalle(idDocumento);
+
+        return documentoVentaDAO.completarDocumentoVenta(idDocumento);
+    }
+
+    @Override
     public String getSiguienteNroDocumento(String serie) {
         String ultimo = documentoVentaDAO.getUltimoNroDocumento(serie);
         int numero;

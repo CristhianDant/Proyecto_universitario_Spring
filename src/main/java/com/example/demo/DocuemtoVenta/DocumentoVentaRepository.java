@@ -114,11 +114,16 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
 
     @Override
     public int anularDocumentoVenta(int idDocumento) {
-        // Nota: Como no hay campo "anulado" en documento_venta, podríamos eliminarlo o agregar lógica específica
-        // Por ahora, devolveremos 0 indicando que no se puede anular
-        // Si se quiere agregar funcionalidad de anulación, habría que modificar el schema
-        return 0;
+        String sql = "UPDATE documento_venta SET estado = 'ANULADO' WHERE id_documento = ?";
+        return jdbcTemplate.update(sql, idDocumento);
     }
+
+    @Override
+    public int completarDocumentoVenta(int idDocumento) {
+        String sql = "UPDATE documento_venta SET estado = 'COMPLETADO' WHERE id_documento = ?";
+        return jdbcTemplate.update(sql, idDocumento);
+    }
+
 
     @Override
     public String getUltimoNroDocumento(String serie) {

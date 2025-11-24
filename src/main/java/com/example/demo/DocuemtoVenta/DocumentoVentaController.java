@@ -113,4 +113,26 @@ public class DocumentoVentaController {
         model.addAttribute("detalles", documentoCompleto.getDetalles());
         return "documento_de_venta/ver_documento";
     }
+
+    @PostMapping("/anular-documento")
+    public String anularDocumento(@RequestParam int id, RedirectAttributes redirectAttributes) {
+        try {
+            documentoVentaService.anularDocumentoVenta(id);
+            redirectAttributes.addFlashAttribute("success", "Documento anulado exitosamente");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error al anular el documento: " + e.getMessage());
+        }
+        return "redirect:/venta/ver-documento?id=" + id;
+    }
+
+    @PostMapping("/completar-documento")
+    public String completarDocumento(@RequestParam int id, RedirectAttributes redirectAttributes) {
+        try {
+            documentoVentaService.completarDocumentoVenta(id);
+            redirectAttributes.addFlashAttribute("success", "Documento completado exitosamente");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Error al completar el documento: " + e.getMessage());
+        }
+        return "redirect:/venta/ver-documento?id=" + id;
+    }
 }

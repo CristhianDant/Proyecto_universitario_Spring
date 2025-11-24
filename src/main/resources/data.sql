@@ -1546,3 +1546,34 @@ INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio
 INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio_unitario, subtotal) VALUES (360, 21, 9, 100.00, 900.00);
 INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio_unitario, subtotal) VALUES (360, 1, 9, 32.00, 288.00);
 INSERT INTO detalle_documento_venta (id_documento, id_producto, cantidad, precio_unitario, subtotal) VALUES (360, 26, 2, 20.00, 40.00);
+
+-- =============================================================================
+-- REINICIO DE SECUENCIAS (Ejecutar al final de data.sql)
+-- Esto arregla el error "Unique index or primary key violation" sincronizando
+-- el contador interno de H2 con los datos insertados manualmente.
+-- =============================================================================
+
+-- 1. Arreglar secuencia para DOCUMENTO_VENTA (Aquí tenías el error del ID 2)
+ALTER TABLE documento_venta
+ALTER COLUMN id_documento
+RESTART WITH (SELECT MAX(id_documento) + 1 FROM documento_venta);
+
+-- 2. Arreglar secuencia para DETALLE_DOCUMENTO_VENTA
+ALTER TABLE detalle_documento_venta
+ALTER COLUMN id_detalle
+RESTART WITH (SELECT MAX(id_detalle) + 1 FROM detalle_documento_venta);
+
+-- 3. Arreglar secuencia para USERS (Usuarios)
+ALTER TABLE users
+ALTER COLUMN id_user
+RESTART WITH (SELECT MAX(id_user) + 1 FROM users);
+
+-- 4. Arreglar secuencia para PRODUCTOS
+ALTER TABLE productos
+ALTER COLUMN id_producto
+RESTART WITH (SELECT MAX(id_producto) + 1 FROM productos);
+
+-- 5. Arreglar secuencia para MARCAS
+ALTER TABLE marcas
+ALTER COLUMN id_marca
+RESTART WITH (SELECT MAX(id_marca) + 1 FROM marcas);
