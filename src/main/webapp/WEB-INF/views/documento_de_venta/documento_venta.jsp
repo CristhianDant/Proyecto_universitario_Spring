@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,7 +16,7 @@
 <main class="container my-5">
     <div class="card venta-card">
         <div class="card-header text-center">
-            <h2>Documento de Venta: 001-0001</h2>
+            <h2>Documento de Venta: ${serie}-${numero}</h2>
         </div>
         <div class="card-body">
             <div class="row">

@@ -93,6 +93,18 @@ public class DocumentoVentaServiceImp implements DocumentoVentaService {
         return documentoVentaDAO.anularDocumentoVenta(idDocumento);
     }
 
+    @Override
+    public String getSiguienteNroDocumento(String serie) {
+        String ultimo = documentoVentaDAO.getUltimoNroDocumento(serie);
+        int numero;
+        if (ultimo != null) {
+            numero = Integer.parseInt(ultimo) + 1;
+        } else {
+            numero = 1;
+        }
+        return String.format("%08d", numero);
+    }
+
     // Método privado para validar documento
     private void validarDocumento(DocumentoVenta documento) {
         if (documento.getRazonSocial() == null || documento.getRazonSocial().trim().isEmpty()) {

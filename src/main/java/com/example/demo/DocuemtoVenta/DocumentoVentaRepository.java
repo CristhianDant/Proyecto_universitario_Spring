@@ -121,4 +121,14 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
         // Si se quiere agregar funcionalidad de anulación, habría que modificar el schema
         return 0;
     }
+
+    @Override
+    public String getUltimoNroDocumento(String serie) {
+        String sql = "SELECT nro_documento FROM documento_venta WHERE nro_serie = ? ORDER BY CAST(nro_documento AS UNSIGNED) DESC LIMIT 1";
+        try {
+            return jdbcTemplate.queryForObject(sql, String.class, serie);
+        } catch (Exception e) {
+            return null; // Si no hay documentos, retorna null
+        }
+    }
 }

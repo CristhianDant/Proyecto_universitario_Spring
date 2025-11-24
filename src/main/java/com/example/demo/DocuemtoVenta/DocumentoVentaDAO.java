@@ -19,4 +19,7 @@ public interface DocumentoVentaDAO {
 
     // Anular documento de venta
     int anularDocumentoVenta(int idDocumento);
+
+    // Obtener el último número de documento para una serie
+    String getUltimoNroDocumento(String serie);
 }
