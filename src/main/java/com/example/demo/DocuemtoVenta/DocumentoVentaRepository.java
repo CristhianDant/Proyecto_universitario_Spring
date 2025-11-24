@@ -56,7 +56,7 @@ public class DocumentoVentaRepository implements DocumentoVentaDAO {
 
     @Override
     public List<DocumentoVenta> listarDocumentosEntreFechas(Date fechaInicio, Date fechaFin) {
-        String sql = "SELECT * FROM documento_venta WHERE DATE(fecha_creacion) BETWEEN ? AND ? ORDER BY fecha_creacion DESC";
+        String sql = "SELECT * FROM documento_venta WHERE CAST(fecha_creacion AS DATE) BETWEEN ? AND ? ORDER BY fecha_creacion DESC";
         return jdbcTemplate.query(sql, documentoRowMapper, fechaInicio, fechaFin);
     }
 

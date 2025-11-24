@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.math.BigDecimal;
@@ -96,5 +98,11 @@ public class DocumentoVentaController {
             redirectAttributes.addFlashAttribute("error", "Error al guardar el documento: " + e.getMessage());
             return "redirect:/venta/compra";
         }
+    }
+
+    @GetMapping("/listar-documentos")
+    @ResponseBody
+    public List<DocumentoVenta> listarDocumentos(@RequestParam Date fechaInicio, @RequestParam Date fechaFin) {
+        return documentoVentaService.listarDocumentosEntreFechas(fechaInicio, fechaFin);
     }
 }
