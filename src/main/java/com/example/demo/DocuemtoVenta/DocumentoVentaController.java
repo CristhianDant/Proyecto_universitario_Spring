@@ -44,7 +44,13 @@ public class DocumentoVentaController {
     }
 
     @RequestMapping("/gestion_ventas")
-    public String listadoVentas(){
+    public String listadoVentas(@RequestParam(required = false) Date fechaInicio, @RequestParam(required = false) Date fechaFin, Model model){
+        if (fechaInicio != null && fechaFin != null) {
+            List<DocumentoVenta> documentos = documentoVentaService.listarDocumentosEntreFechas(fechaInicio, fechaFin);
+            model.addAttribute("documentos", documentos);
+        } else {
+            model.addAttribute("documentos", new ArrayList<DocumentoVenta>());
+        }
         return "documento_de_venta/gestion_documento";
     }
 
@@ -98,11 +104,5 @@ public class DocumentoVentaController {
             redirectAttributes.addFlashAttribute("error", "Error al guardar el documento: " + e.getMessage());
             return "redirect:/venta/compra";
         }
-    }
-
-    @GetMapping("/listar-documentos")
-    @ResponseBody
-    public List<DocumentoVenta> listarDocumentos(@RequestParam Date fechaInicio, @RequestParam Date fechaFin) {
-        return documentoVentaService.listarDocumentosEntreFechas(fechaInicio, fechaFin);
     }
 }
