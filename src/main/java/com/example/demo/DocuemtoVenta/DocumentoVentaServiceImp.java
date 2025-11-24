@@ -81,14 +81,8 @@ public class DocumentoVentaServiceImp implements DocumentoVentaService {
             throw new IllegalArgumentException("El ID del documento debe ser mayor a 0");
         }
 
-        // Verificar que el documento existe antes de anularlo
         DocumentoVentaCompleto documentoCompleto = obtenerDocumentoConDetalle(idDocumento);
 
-        // Aquí podríamos agregar lógica adicional como:
-        // - Verificar permisos del usuario
-        // - Verificar estado del documento
-        // - Crear registro de auditoría
-        // - etc.
 
         return documentoVentaDAO.anularDocumentoVenta(idDocumento);
     }
