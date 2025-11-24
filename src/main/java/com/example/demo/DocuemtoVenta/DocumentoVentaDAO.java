@@ -3,6 +3,10 @@ package com.example.demo.DocuemtoVenta;
 import java.sql.Date;
 import java.util.List;
 
+import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVentaCompleto;
+
 public interface DocumentoVentaDAO {
     // Listar documentos de venta entre fechas (solo encabezados)
     List<DocumentoVenta> listarDocumentosEntreFechas(Date fechaInicio, Date fechaFin);

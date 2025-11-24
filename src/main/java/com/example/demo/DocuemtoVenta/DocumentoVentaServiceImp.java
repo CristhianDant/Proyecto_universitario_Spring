@@ -6,6 +6,10 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
+import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVentaCompleto;
+
 @Service
 public class DocumentoVentaServiceImp implements DocumentoVentaService {
 

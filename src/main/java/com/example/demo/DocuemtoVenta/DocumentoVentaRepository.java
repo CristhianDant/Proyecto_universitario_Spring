@@ -11,6 +11,10 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
 
+import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVentaCompleto;
+
 @Repository
 public class DocumentoVentaRepository implements DocumentoVentaDAO {
 

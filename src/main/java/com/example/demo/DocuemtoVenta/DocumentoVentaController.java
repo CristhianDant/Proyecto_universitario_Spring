@@ -11,6 +11,10 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.example.demo.DocuemtoVenta.models.DetalleDocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVenta;
+import com.example.demo.DocuemtoVenta.models.DocumentoVentaCompleto;
+
 @Controller
 @RequestMapping("/documentos-venta")
 public class DocumentoVentaController {
